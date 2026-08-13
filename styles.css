@@ -1,0 +1,519 @@
+/* Mohamed Eldagla — personal site
+   No build step. One stylesheet. System fonts only, monochrome.
+   Every foreground/background pair here was checked against WCAG AA. */
+
+/* Theme. Light is the base. Dark is applied either because the system asks for
+   it and the visitor has not overridden it, or because they explicitly chose
+   it — so the dark tokens are declared twice, once per route. Never define a
+   color only inside a media query, or the toggle cannot win in both
+   directions. */
+
+:root {
+  --bg:          #FFFFFF;
+  --fg:          #111111;
+  --muted:       #5F5F5F;
+  --rule:        #E5E5E5;
+  --rule-strong: #C4C4C4;
+
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+          Arial, sans-serif;
+
+  --measure: 780px;
+  --gutter: 1.5rem;
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:          #121212;
+    --fg:          #E8E8E8;
+    --muted:       #9A9A9A;
+    --rule:        #2A2A2A;
+    --rule-strong: #4A4A4A;
+
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg:          #121212;
+  --fg:          #E8E8E8;
+  --muted:       #9A9A9A;
+  --rule:        #2A2A2A;
+  --rule-strong: #4A4A4A;
+
+  color-scheme: dark;
+}
+
+/* ---------- base ---------- */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-text-size-adjust: 100%;
+}
+
+.wrap {
+  max-width: var(--measure);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+h1, h2, h3 {
+  font-family: var(--sans);
+  line-height: 1.25;
+  margin: 0;
+}
+
+/* Links carry no color of their own — the underline does the work. */
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--rule-strong);
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+
+a:hover { text-decoration-color: currentColor; }
+
+:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 2px;
+}
+
+p { margin: 0 0 1rem; }
+
+.sep {
+  color: var(--rule-strong);
+  padding-inline: 0.4em;
+}
+
+.dates { color: var(--muted); }
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--bg);
+  color: var(--fg);
+  padding: 0.75rem 1rem;
+  z-index: 10;
+}
+.skip-link:focus {
+  left: 0;
+  outline: 2px solid var(--fg);
+}
+
+/* ---------- top nav ---------- */
+
+.sectionnav { padding-block: 1.4rem 0; }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Theme switch. The padding is not decorative — it carries the control past
+   the 24px WCAG 2.2 minimum tap target, which the 22px track alone would miss. */
+.theme-switch {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  background: none;
+  border: 0;
+  padding: 0.4rem 0;
+  margin-block-end: 0.9rem;
+  cursor: pointer;
+}
+
+.theme-switch-track {
+  position: relative;
+  display: block;
+  width: 38px;
+  height: 22px;
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  transition: border-color 0.15s ease;
+}
+
+.theme-switch-knob {
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  width: 14px;
+  height: 14px;
+  margin-top: -7px;
+  border-radius: 50%;
+  background: var(--muted);
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.theme-switch[aria-checked="true"] .theme-switch-knob {
+  transform: translateX(16px);
+}
+
+.theme-switch:hover .theme-switch-track { border-color: var(--fg); }
+.theme-switch:hover .theme-switch-knob { background: var(--fg); }
+
+.theme-switch:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 3px;
+  border-radius: 999px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-switch-track,
+  .theme-switch-knob { transition: none; }
+}
+
+.sectionnav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.25rem;
+  margin: 0;
+  padding: 0;
+  font-size: 0.875rem;
+}
+
+/* inline-block + vertical padding keeps the tap target at/above the 24px
+   WCAG 2.2 minimum without changing how the row looks */
+.sectionnav a {
+  display: inline-block;
+  padding-block: 0.3rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+.sectionnav a:hover {
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.sectionnav a[aria-current] {
+  color: var(--fg);
+  font-weight: 600;
+}
+
+/* ---------- masthead ---------- */
+
+/* Home intro: the portrait floats so the opening prose wraps beside it. */
+.intro { padding-block: 1.25rem 0; }
+
+.intro::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.portrait {
+  float: right;
+  width: 160px;
+  height: auto;
+  margin: 0.4rem 0 1rem 1.75rem;
+}
+
+/* Subpage headers: title plus a one-line orientation note. */
+.pagehead { padding-block: 1.25rem 0.25rem; }
+
+h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.35rem;
+}
+
+.position {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.email {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 0.9rem;
+}
+
+.lead {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.9rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.linkrow {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.25rem;
+  margin: 1.25rem 0 0;
+  padding: 1rem 0 0;
+  border-block-start: 1px solid var(--rule);
+  font-size: 0.95rem;
+}
+
+/* Keep the contact links a comfortable tap target (WCAG 2.2 target-size). */
+.linkrow a {
+  display: inline-block;
+  padding-block: 0.15rem;
+}
+
+/* ---------- sections ---------- */
+
+main { padding-block: 1.5rem 0.5rem; }
+
+section { margin-block-end: 2.1rem; }
+
+h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+/* ---------- publications ---------- */
+
+.pub-list, .entry-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pub { margin-block-end: 1.35rem; }
+.pub:last-child { margin-block-end: 0; }
+
+/* The thumbnail column exists only when an entry actually has a thumbnail,
+   so a list without images has no dead gutter. */
+.pub-list.has-thumbs .pub {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* Pin the columns so an entry with no thumbnail still puts its text in column
+   two — leaving the image column empty, rather than flowing into it. */
+.pub-list.has-thumbs .pub-thumb-cell { grid-column: 1; }
+.pub-list.has-thumbs .pub-body { grid-column: 2; }
+
+/* Thumbnails are pre-rendered as uniform 2:1 boxes, so rows align and the
+   space is reserved before the image arrives. */
+.pub-thumb {
+  width: 160px;
+  height: auto;
+  aspect-ratio: 2 / 1;
+  display: block;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+}
+
+.pub-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.pub-authors {
+  font-size: 0.95rem;
+  margin-bottom: 0.15rem;
+}
+
+.pub-authors strong { font-weight: 700; }
+
+.pub-meta {
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin-bottom: 0.3rem;
+}
+
+.pub-summary {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-block: 0.3rem 0;
+}
+
+
+/* ---------- publication status ----------
+   No color and no chips, so the distinction has to live in wording and slant.
+   A venue name is upright; an unpublished status is italic and explicitly
+   worded, so "Manuscript in preparation" can never be skimmed as a venue. */
+
+.status.is-published { font-style: normal; }
+
+.status.is-preparation,
+.status.is-submission {
+  font-style: italic;
+}
+
+/* ---------- generic entries ---------- */
+
+.entry { margin-block-end: 1.15rem; }
+.entry:last-child { margin-block-end: 0; }
+
+/* Title left, dates pinned right on the first baseline. A long title wraps
+   inside its own box rather than pushing the dates onto a line of their own,
+   which would break the date column. */
+.entry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0 1rem;
+}
+
+.entry-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.entry-dates {
+  flex: 0 0 auto;
+  font-size: 0.9rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.entry-meta {
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin-bottom: 0.2rem;
+}
+
+.entry-desc {
+  font-size: 0.95rem;
+  margin: 0.1rem 0 0;
+}
+
+.selectivity { color: var(--muted); }
+
+.load-error {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* ---------- layout-shift reservation ----------
+   The lists are filled from JSON after first paint, so without this the page
+   paints empty and then jumps as content lands. These hold roughly the space
+   the current data occupies, and apply ONLY while the list is still empty —
+   the moment items are inserted, :empty stops matching and the reservation
+   disappears. Wrong numbers cost a small jump, never a broken layout, so
+   they are safe to leave stale. Re-measure if the data changes a lot. */
+
+#fellowship-list:empty { min-height: 264px; }
+#teaching-list:empty   { min-height: 162px; }
+#experience-list:empty { min-height: 214px; }
+#honors-list:empty     { min-height: 189px; }
+#pub-list:empty        { min-height: 617px; }
+
+@media (max-width: 640px) {
+  /* Narrow screens wrap far more, so they need their own (taller) numbers.
+     Measured at 412px, the viewport Lighthouse audits by default. */
+  #fellowship-list:empty { min-height: 474px; }
+  #teaching-list:empty   { min-height: 280px; }
+  #experience-list:empty { min-height: 414px; }
+  #honors-list:empty     { min-height: 294px; }
+  #pub-list:empty        { min-height: 1259px; }
+}
+
+/* ---------- footer ---------- */
+
+footer {
+  border-block-start: 1px solid var(--rule);
+  padding-block: 1.25rem 2rem;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+footer p { margin: 0; }
+
+/* ---------- narrow screens ---------- */
+
+@media (max-width: 640px) {
+  .sectionnav { padding-block: 1.25rem 0; }
+  .intro, .pagehead { padding-block: 1rem 0.25rem; }
+
+  .portrait {
+    float: none;
+    width: 124px;
+    margin: 0 0 1.1rem;
+  }
+
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.25rem; }
+
+  /* Too narrow to hold a date column — let dates sit under the title. */
+  .entry-head { display: block; }
+  .entry-dates { display: block; }
+
+  .pub-list.has-thumbs .pub { grid-template-columns: 1fr; }
+  .pub-list.has-thumbs .pub-thumb-cell,
+  .pub-list.has-thumbs .pub-body { grid-column: 1; }
+  .pub-thumb { width: 100%; max-width: 240px; }
+
+  .linkrow, .sectionnav ul { gap: 0 1rem; }
+}
+
+/* ---------- print: the page should come out as a clean CV ---------- */
+
+@media print {
+  :root {
+    --bg: #fff;
+    --fg: #000;
+    --muted: #333;
+    --rule: #bbb;
+    --rule-strong: #888;
+    --measure: 100%;
+  }
+
+  body { font-size: 10.5pt; line-height: 1.4; }
+
+  .skip-link,
+  .sectionnav,
+  .portrait,
+  footer { display: none; }   /* footer only repeats the contact row above */
+
+  .intro, .pagehead { padding-block: 0 0.5rem; }
+  main { padding-block: 0.5rem 0; }
+  section { margin-block-end: 1.25rem; }
+
+  h1 { font-size: 19pt; }
+  h2 { font-size: 12pt; margin-bottom: 0.5rem; }
+  .pub-title, .entry-title { font-size: 10.5pt; }
+
+  a { text-decoration: none; }
+
+  /* Show URLs for the contact row only — expanding every link would bloat the page. */
+  .linkrow a::after {
+    content: " (" attr(href) ")";
+    font-size: 8.5pt;
+    color: #444;
+    word-break: break-all;
+  }
+  .linkrow a[href^="mailto:"]::after { content: ""; }
+
+  /* Individual entries must not split across pages; whole sections may flow,
+     otherwise a long section leaves most of a page blank. */
+  .pub, .entry { break-inside: avoid; }
+  h2, h3 { break-after: avoid; }
+}

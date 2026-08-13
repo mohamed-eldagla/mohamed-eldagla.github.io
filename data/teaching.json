@@ -1,0 +1,16 @@
+[
+  {
+    "role": "Research & Teaching Assistant",
+    "org": "German International University, Faculty of Informatics",
+    "orgUrl": "https://giu-uni.de/",
+    "dates": "Sep 2025 – present",
+    "description": "Big Data, Database Systems, and Introduction to Computer Science, reaching 100+ students. Tutorials on SQL and NoSQL, Apache Kafka pipelines, and relational algebra."
+  },
+  {
+    "role": "Mentor",
+    "org": "Stanford Code in Place (CS106A)",
+    "orgUrl": "https://codeinplace.stanford.edu/",
+    "dates": "Apr – Jul 2026",
+    "description": "Weekly live sections for a program serving 16,000+ learners worldwide."
+  }
+]

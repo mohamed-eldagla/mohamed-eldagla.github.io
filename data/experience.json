@@ -1,0 +1,26 @@
+[
+  {
+    "role": "Data Scientist Intern (NLP)",
+    "org": "Université Paris-Est Créteil",
+    "orgUrl": "https://www.u-pec.fr/",
+    "dates": "Jun – Aug 2025",
+    "selectivity": "1 of 30 from 1,300+ applicants",
+    "description": "LLM-based event discovery over 50K+ records, with ensemble knowledge distillation."
+  },
+  {
+    "role": "AI Engineer Intern",
+    "org": "Egyptian Cabinet Information and Decision Support Center",
+    "orgUrl": "https://www.idsc.gov.eg/",
+    "dates": "Jul – Sep 2025",
+    "selectivity": null,
+    "description": "Led a Prime Minister-sponsored RAG rumor-detection system for the national “Ask Egypt” platform."
+  },
+  {
+    "role": "ICT Specialist",
+    "org": "United Nations COP27",
+    "orgUrl": null,
+    "dates": "Oct – Nov 2022",
+    "selectivity": null,
+    "description": "Supported the conference mobile application alongside MCIT and UN engineering teams."
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "sycophancy-mask",
+    "title": "The Sycophancy Mask: Mechanistic Evidence that Vision-Language Models Internally Detect Cross-Modal Conflicts They Refuse to Report",
+    "authors": ["Eldagla, M. I.", "ElShafei, Z. H.", "Anter, A. M."],
+    "meIndex": 0,
+    "venue": null,
+    "venueDetail": null,
+    "year": 2026,
+    "status": "in-preparation",
+    "metrics": null,
+    "links": {},
+    "thumbnail": "assets/thumbs/sycophancy-mask.jpg",
+    "summary": "Vision-language models internally register when an image and its accompanying text disagree, yet their answers side with the text instead of reporting the conflict."
+  },
+  {
+    "id": "blockchain-eeg-fusion",
+    "title": "Blockchain-Integrated Multi-Modal LSTM-CNN Fusion for High-Precision Epileptic Seizure Detection from EEG Signals",
+    "authors": ["Mokhiamar, M. O.", "Mahmoud, A.", "Eldagla, M. I.", "Aribi, Y.", "Anter, A. M."],
+    "meIndex": 2,
+    "venue": "Knowledge-Based Systems",
+    "venueDetail": "323, 113703",
+    "year": 2025,
+    "status": "published",
+    "metrics": { "quartile": "Q1", "impactFactor": "8.8" },
+    "links": {
+      "doi": "https://doi.org/10.1016/j.knosys.2025.113703",
+      "bibtex": "assets/bib/blockchain-eeg-fusion.bib"
+    },
+    "thumbnail": "assets/thumbs/blockchain-eeg-fusion.jpg",
+    "summary": "Fusing LSTM and CNN branches over multi-modal EEG improves seizure-detection precision, with a blockchain layer keeping the underlying clinical records tamper-evident."
+  },
+  {
+    "id": "eeg-spectrogram-augmentation",
+    "title": "EEG Spectrogram Augmentation Using Transformer and Quantum-Inspired Generative Models for Epilepsy Classification",
+    "authors": ["Elshamy, A. A.", "Metwaly, H. A.", "Eldagla, M. I.", "AlKayem, Z.", "Zaky, A. B."],
+    "meIndex": 2,
+    "venue": "IEEE Japan-Africa Conference on Electronics, Communications and Computations (JAC-ECC)",
+    "venueDetail": null,
+    "year": 2025,
+    "status": "published",
+    "metrics": null,
+    "links": {
+      "paper": "https://ieeexplore.ieee.org/document/11417557",
+      "bibtex": "assets/bib/eeg-spectrogram-augmentation.bib"
+    },
+    "thumbnail": "assets/thumbs/eeg-quantum-architecture.jpg",
+    "summary": "Transformer and quantum-inspired generative models synthesize additional EEG spectrograms, improving epilepsy classification when labelled recordings are scarce."
+  }
+]

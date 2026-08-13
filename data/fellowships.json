@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Fatima Institute for Global AI Research",
+    "url": "https://fatima.institute/",
+    "role": "Pre-doctoral Fellow",
+    "dates": "Apr 2026 – present",
+    "mentor": "Alfonso Amayuelas",
+    "mentorUrl": "https://www.amayuelas.me/",
+    "affiliation": "Stanford HAI",
+    "affiliationUrl": "https://hai.stanford.edu/",
+    "selectivity": "1 of 55 from 700+ applicants",
+    "description": "Curiosity-driven learning in LLM agents and multilingual AI safety."
+  },
+  {
+    "name": "PRISM AI Safety Research Fellowship",
+    "url": "https://prism-research.org/",
+    "role": "Research Fellow",
+    "dates": "Jun 2026 – present",
+    "mentor": "Rachel Freedman",
+    "mentorUrl": "https://rachelfreedman.github.io/",
+    "affiliation": "UC Berkeley CHAI",
+    "affiliationUrl": "https://humancompatible.ai/",
+    "selectivity": "1 of 50 from 800+ applicants",
+    "description": "Reward model interpretability, with collaborators at Columbia, CMU, Stanford, UC Berkeley, AIMS, and Intel."
+  },
+  {
+    "name": "MIT AI Safety Fellowship",
+    "url": "https://aialignment.mit.edu/aisf/",
+    "role": "Research Fellow",
+    "dates": "Jun – Aug 2026",
+    "mentor": null,
+    "mentorUrl": null,
+    "affiliation": null,
+    "affiliationUrl": null,
+    "selectivity": "Selected from 300+ applicants",
+    "description": "Alignment, scalable oversight, and mechanistic interpretability."
+  }
+]

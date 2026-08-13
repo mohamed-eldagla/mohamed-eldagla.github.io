@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CV — Mohamed Eldagla</title>
+<meta name="description" content="Fellowships, teaching, experience, honors, and education for Mohamed Eldagla, MSc candidate in Data Science at the German International University.">
+<link rel="canonical" href="https://mohamed-eldagla.github.io/cv/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CV — Mohamed Eldagla">
+<meta property="og:description" content="Fellowships, teaching, experience, honors, and education.">
+<meta property="og:url" content="https://mohamed-eldagla.github.io/cv/">
+<meta property="og:image" content="https://mohamed-eldagla.github.io/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mohamed-eldagla.github.io/assets/og-image.png">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="../assets/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../styles.css">
+
+<!-- Applies a stored theme before first paint. Must stay inline and blocking:
+     loading it as a file would flash the wrong theme on every visit. -->
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<script src="../theme.js" defer></script>
+
+<!-- Start the data fetches during parse so the lists render before first paint
+     rather than shifting the page after it. -->
+<link rel="preload" as="fetch" crossorigin href="../data/fellowships.json">
+<link rel="preload" as="fetch" crossorigin href="../data/teaching.json">
+<link rel="preload" as="fetch" crossorigin href="../data/experience.json">
+<link rel="preload" as="fetch" crossorigin href="../data/honors.json">
+<script src="../render.js" defer></script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<nav class="sectionnav" aria-label="Main">
+  <div class="wrap navbar">
+    <ul role="list">
+      <li><a href="../">Home</a></li>
+      <li><a href="../publications/">Publications</a></li>
+      <li><a href="./" aria-current="page">CV</a></li>
+      <li><a href="../notes/">Notes</a></li>
+    </ul>
+    <button type="button" class="theme-switch" id="theme-toggle" role="switch"
+            aria-checked="false" title="Toggle dark mode" hidden>
+      <span class="theme-switch-track"><span class="theme-switch-knob"></span></span>
+      <span class="visually-hidden">Dark mode</span>
+    </button>
+  </div>
+</nav>
+
+<header class="pagehead wrap">
+  <h1>CV</h1>
+  <p class="position">
+    <a href="../assets/Mohamed_Eldagla_CV.pdf">Download the full CV as a PDF</a>.
+    <a href="../publications/">Publications</a> are listed separately.
+  </p>
+</header>
+
+<main id="main" class="wrap">
+
+  <section id="fellowships" aria-labelledby="fellowships-h">
+    <h2 id="fellowships-h">Fellowships</h2>
+    <ul class="entry-list" role="list" id="fellowship-list"></ul>
+  </section>
+
+  <section id="teaching" aria-labelledby="teaching-h">
+    <h2 id="teaching-h">Teaching &amp; Mentorship</h2>
+    <ul class="entry-list" role="list" id="teaching-list"></ul>
+  </section>
+
+  <section id="experience" aria-labelledby="experience-h">
+    <h2 id="experience-h">Experience</h2>
+    <ul class="entry-list" role="list" id="experience-list"></ul>
+  </section>
+
+  <section id="honors" aria-labelledby="honors-h">
+    <h2 id="honors-h">Honors &amp; Awards</h2>
+    <ul class="entry-list" role="list" id="honors-list"></ul>
+  </section>
+
+  <section id="education" aria-labelledby="education-h">
+    <h2 id="education-h">Education</h2>
+    <ul class="entry-list" role="list">
+      <li class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">MSc Data Science,
+            <a href="https://giu-uni.de/" rel="noopener">German International University</a></h3>
+          <span class="entry-dates">Oct 2025 – present</span>
+        </div>
+        <p class="entry-desc">
+          German GPA 0.7 — the highest attainable grade on the German scale, where 1.0 is
+          excellent and 4.0 is the pass threshold, so it corresponds to roughly 4.0/4.0 on the
+          US scale.
+        </p>
+      </li>
+      <li class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">BSc Computer Science (AI and Data Science),
+            <a href="https://ejust.edu.eg/" rel="noopener">E-JUST</a></h3>
+          <span class="entry-dates">2021 – 2025</span>
+        </div>
+        <p class="entry-desc">
+          Egypt-Japan University of Science and Technology. GPA 3.59/4.0.
+        </p>
+      </li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <p>
+    mohamed.eldagla [at] giu-uni.de
+    <span class="sep">·</span>
+    <a href="../">Home</a>
+  </p>
+</footer>
+
+</body>
+</html>
