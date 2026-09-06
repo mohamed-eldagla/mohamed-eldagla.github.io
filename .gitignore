@@ -1,1 +1,5 @@
 .DS_Store
+
+# Working source images kept beside the site but never served.
+/personal-highres.png
+/profile.jpg

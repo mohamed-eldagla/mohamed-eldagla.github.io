@@ -1,0 +1,24 @@
+[
+  {
+    "role": "MSc Data Science",
+    "org": "German International University in Cairo",
+    "orgUrl": null,
+    "dates": "Oct 2025 – present",
+    "selectivity": null,
+    "links": [
+      { "url": "https://giu-uni.de/" }
+    ],
+    "description": "German GPA 0.7 — the highest attainable grade on the German scale, where 1.0 is excellent and 4.0 is the pass threshold, so it corresponds to roughly 4.0/4.0 on the US scale."
+  },
+  {
+    "role": "BSc Computer Science (AI and Data Science)",
+    "org": "E-JUST",
+    "orgUrl": null,
+    "dates": "2021 – 2025",
+    "selectivity": null,
+    "links": [
+      { "url": "https://ejust.edu.eg/" }
+    ],
+    "description": "Egypt-Japan University of Science and Technology. GPA 3.59/4.0."
+  }
+]

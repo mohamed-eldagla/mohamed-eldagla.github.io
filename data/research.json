@@ -1,7 +1,11 @@
 [
   {
     "name": "Fatima Institute for Global AI Research",
-    "url": "https://fatima.institute/",
+    "links": [
+      {
+        "url": "https://fatima.institute/"
+      }
+    ],
     "role": "Pre-doctoral Fellow",
     "dates": "Apr 2026 – present",
     "mentor": "Alfonso Amayuelas",
@@ -13,7 +17,11 @@
   },
   {
     "name": "PRISM AI Safety Research Fellowship",
-    "url": "https://prism-research.org/",
+    "links": [
+      {
+        "url": "https://prism-research.org/"
+      }
+    ],
     "role": "Research Fellow",
     "dates": "Jun 2026 – present",
     "mentor": "Rachel Freedman",
@@ -25,7 +33,11 @@
   },
   {
     "name": "MIT AI Safety Fellowship",
-    "url": "https://aialignment.mit.edu/aisf/",
+    "links": [
+      {
+        "url": "https://aialignment.mit.edu/aisf/"
+      }
+    ],
     "role": "Research Fellow",
     "dates": "Jun – Aug 2026",
     "mentor": null,
@@ -34,5 +46,32 @@
     "affiliationUrl": null,
     "selectivity": "Selected from 300+ applicants",
     "description": "Alignment, scalable oversight, and mechanistic interpretability."
+  },
+  {
+    "name": "Université Paris-Est Créteil",
+    "links": [
+      {
+        "url": "https://www.u-pec.fr/"
+      }
+    ],
+    "role": "Data Scientist Intern (NLP)",
+    "dates": "Jun – Aug 2025",
+    "mentor": null,
+    "mentorUrl": null,
+    "affiliation": null,
+    "affiliationUrl": null,
+    "selectivity": "1 of 30 from 1,300+ applicants",
+    "description": "LLM-based event discovery over 50K+ records, with ensemble knowledge distillation."
+  },
+  {
+    "name": "Medical Informatics & Neuro Dynamics (MIND) School",
+    "role": "Research Assistant",
+    "dates": "May 2023 – Jul 2026",
+    "mentor": "Ahmed Anter",
+    "mentorUrl": "https://scholar.google.com/citations?user=Is1NwF4AAAAJ&hl=en",
+    "affiliation": "E-JUST",
+    "affiliationUrl": "https://ejust.edu.eg/",
+    "selectivity": null,
+    "description": "Machine learning for EEG signal analysis and epilepsy classification."
   }
 ]

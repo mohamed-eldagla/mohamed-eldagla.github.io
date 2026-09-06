@@ -37,8 +37,10 @@
     <ul role="list">
       <li><a href="../">Home</a></li>
       <li><a href="./" aria-current="page">Publications</a></li>
+      <li><a href="../teaching/">Teaching</a></li>
+      <li><a href="../awards/">Awards</a></li>
       <li><a href="../cv/">CV</a></li>
-      <li><a href="../notes/">Notes</a></li>
+      <li><a href="../blog/">Blog</a></li>
     </ul>
     <button type="button" class="theme-switch" id="theme-toggle" role="switch"
             aria-checked="false" title="Toggle dark mode" hidden>
@@ -56,10 +58,10 @@
 </header>
 
 <main id="main" class="wrap">
-  <section aria-labelledby="pub-h">
-    <h2 id="pub-h" class="visually-hidden">All publications</h2>
-    <ol class="pub-list" id="pub-list" role="list"></ol>
-  </section>
+  <!-- Filled by render.js with one <section> per category, each carrying its
+       own <h2> and <ol>. The categories and their order come from
+       data/publications.json, not from here. -->
+  <div id="pub-list"></div>
 </main>
 
 <footer class="wrap">

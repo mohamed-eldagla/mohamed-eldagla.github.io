@@ -1,7 +1,18 @@
 [
   {
-    "name": "Full Fellowship, MSc Data Science",
-    "org": "German International University",
+    "name": "Emerging Leaders in AI (ELAI)",
+    "org": "Black in AI",
+    "year": 2026,
+    "description": "Selected for the Grad Prep Program, which pairs prospective graduate applicants with mentors for guidance through the PhD application process.",
+    "links": [
+      {
+        "url": "https://www.blackinai.org/our-work/emerging-leaders-in-ai-elai-grad-prep-program"
+      }
+    ]
+  },
+  {
+    "name": "Master's Fellowship",
+    "org": "German International University in Cairo",
     "year": 2025,
     "description": "Full tuition, awarded on academic merit."
   },
@@ -15,6 +26,53 @@
     "name": "SAS Curiosity Cup",
     "org": null,
     "year": 2024,
-    "description": "Top 15 of 107 global participants."
+    "description": "Top 15 of 107 global participants.",
+    "links": [
+      {
+        "url": "https://www.sas.com/en_us/events/25q3/curiosity-cup.html"
+      },
+      {
+        "label": "Badge",
+        "url": "https://www.credly.com/badges/07a69768-87d1-45bf-8efa-12aef5e8d958/public_url"
+      },
+      {
+        "label": "Recognition",
+        "url": "assets/press/sas-curiosity-cup-2024.jpg"
+      }
+    ]
+  },
+  {
+    "name": "Value Program Graduate",
+    "org": "National Training Academy (NTA)",
+    "year": 2023,
+    "description": "Presidential leadership programme affiliated with the Presidency of the Egyptian Republic, covering artificial intelligence, computer science, and leadership; its graduates include more than 10 ministers and governors.",
+    "links": [
+      {
+        "url": "https://nta.eg"
+      }
+    ]
+  },
+  {
+    "name": "Data Science Internship — 2nd Place",
+    "org": "DataScience Middle East",
+    "year": null,
+    "links": [
+      {
+        "url": "https://datascience.me/"
+      }
+    ],
+    "description": "Placed second across the cohort of a two-month hybrid data science internship at a SAS partner."
+  },
+  {
+    "name": "Certified Trainer of Trainers (TOT)",
+    "org": null,
+    "year": null,
+    "links": [
+      {
+        "label": "Be an Ambassador",
+        "url": "https://mped.gov.eg/DynamicPage?id=88&lang=en"
+      }
+    ],
+    "description": "Qualified through the Be an Ambassador Program with the Ministry of Planning and Economic Development, and led a team delivering the presentation “AI for a Sustainable Future”."
   }
 ]

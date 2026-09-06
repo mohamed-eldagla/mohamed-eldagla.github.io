@@ -232,6 +232,12 @@ h1 {
   margin-bottom: 0.35rem;
 }
 
+/* The 2.4rem h1 above is sized for the homepage, where the heading is a
+   person's name and carries the page on its own. Every interior heading is a
+   section label instead ("Publications", "Teaching"), which reads as oversized
+   at that size — so .pagehead, which only interior pages use, takes it down. */
+.pagehead h1 { font-size: 1.75rem; }
+
 .position {
   font-size: 0.95rem;
   color: var(--muted);
@@ -299,6 +305,95 @@ h2 {
   padding: 0;
 }
 
+/* The role / faculty / institution line under a taught course. Muted and set
+   just under the title, so the head line stays the thing you scan. */
+.course-affil {
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin-block: 0.1rem 0.25rem;
+}
+
+/* Labelled links sit on their own row. These are the one place on the site that
+   carries color: everything else is monochrome, so the blue marks them as the
+   things to click rather than more prose. Both values are contrast-checked
+   against their own background — 6.44:1 on white, 9.02:1 on the dark bg — so
+   the color is decoration on top of an underline, never the only signal. */
+:root { --link: #0A58CA; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --link: #79B8FF; }
+}
+:root[data-theme="dark"] { --link: #79B8FF; }
+
+.entry-links {
+  font-size: 0.85rem;
+  margin-block: 0.15rem 0.35rem;
+}
+
+/* No underline at rest. This row holds nothing but links, so color alone
+   identifies them without the ambiguity WCAG warns about for links sitting
+   inside prose — there is no surrounding body text here to be mistaken for.
+   The underline returns on hover and focus, so the affordance is still there
+   the moment you go looking for it. */
+.entry-links a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+/* Nudged down and set smaller so the arrow reads as a marker beside the label
+   rather than part of the word. */
+.entry-links .ext {
+  font-size: 0.8em;
+  margin-inline-start: 0.25em;
+  vertical-align: 0.05em;
+}
+
+.entry-links a:hover,
+.entry-links a:focus-visible {
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+}
+
+/* ---------- category filter ----------
+   Built by render.js from the categories present in the data. The pressed
+   state is carried by aria-pressed, so the style is driven by the same
+   attribute a screen reader reads — they cannot drift apart. */
+
+.pub-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-block-end: 1.75rem;
+}
+
+.pub-filter-btn {
+  font: inherit;
+  font-size: 0.85rem;
+  line-height: 1.2;
+  /* Vertical padding carries the control past the 24px WCAG 2.2 minimum tap
+     target, which the text alone would miss. */
+  padding: 0.4rem 0.75rem;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.pub-filter-btn:hover { color: var(--fg); border-color: var(--fg); }
+
+.pub-filter-btn[aria-pressed="true"] {
+  color: var(--bg);
+  background: var(--fg);
+  border-color: var(--fg);
+  font-weight: 600;
+}
+
+/* Each category is its own section with its own heading; the last one must
+   not add trailing space above the footer. A hidden group is filtered out, and
+   must not leave its margin behind. */
+.pub-group[hidden] { display: none; }
+.pub-group:last-child { margin-block-end: 0; }
+
 .pub { margin-block-end: 1.35rem; }
 .pub:last-child { margin-block-end: 0; }
 
@@ -315,6 +410,20 @@ h2 {
    two — leaving the image column empty, rather than flowing into it. */
 .pub-list.has-thumbs .pub-thumb-cell { grid-column: 1; }
 .pub-list.has-thumbs .pub-body { grid-column: 2; }
+
+/* Teaching entries take the same optional column. It appears only once at
+   least one entry has an image, so the list reads correctly while they are
+   still being added — and an entry without one leaves the column empty rather
+   than showing a placeholder graphic. */
+.entry-list.has-thumbs .entry {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.entry-list.has-thumbs .pub-thumb-cell { grid-column: 1; }
+.entry-list.has-thumbs .entry-body { grid-column: 2; }
 
 /* Thumbnails are pre-rendered as uniform 2:1 boxes, so rows align and the
    space is reserved before the image arrives. */
@@ -405,6 +514,11 @@ h2 {
   margin: 0.1rem 0 0;
 }
 
+/* Course descriptions sit below the affiliation line in the hierarchy, so they
+   are set smaller than it. Scoped to .entry-body, which only taught courses
+   use — the research, honors, and education lists keep the larger size. */
+.entry-body .entry-desc { font-size: 0.88rem; }
+
 .selectivity { color: var(--muted); }
 
 .load-error {
@@ -420,20 +534,22 @@ h2 {
    disappears. Wrong numbers cost a small jump, never a broken layout, so
    they are safe to leave stale. Re-measure if the data changes a lot. */
 
-#fellowship-list:empty { min-height: 264px; }
-#teaching-list:empty   { min-height: 162px; }
-#experience-list:empty { min-height: 214px; }
-#honors-list:empty     { min-height: 189px; }
-#pub-list:empty        { min-height: 617px; }
+#research-list:empty   { min-height: 567px; }
+#teaching-list:empty   { min-height: 1008px; }
+#experience-list:empty { min-height: 177px; }
+#education-list:empty  { min-height: 202px; }
+#honors-list:empty     { min-height: 701px; }
+#pub-list:empty        { min-height: 1344px; }
 
 @media (max-width: 640px) {
   /* Narrow screens wrap far more, so they need their own (taller) numbers.
      Measured at 412px, the viewport Lighthouse audits by default. */
-  #fellowship-list:empty { min-height: 474px; }
-  #teaching-list:empty   { min-height: 280px; }
-  #experience-list:empty { min-height: 414px; }
-  #honors-list:empty     { min-height: 294px; }
-  #pub-list:empty        { min-height: 1259px; }
+  #research-list:empty   { min-height: 913px; }
+  #teaching-list:empty   { min-height: 2463px; }
+  #experience-list:empty { min-height: 313px; }
+  #education-list:empty  { min-height: 358px; }
+  #honors-list:empty     { min-height: 1036px; }
+  #pub-list:empty        { min-height: 2638px; }
 }
 
 /* ---------- footer ---------- */
@@ -466,9 +582,12 @@ footer p { margin: 0; }
   .entry-head { display: block; }
   .entry-dates { display: block; }
 
-  .pub-list.has-thumbs .pub { grid-template-columns: 1fr; }
+  .pub-list.has-thumbs .pub,
+  .entry-list.has-thumbs .entry { grid-template-columns: 1fr; }
   .pub-list.has-thumbs .pub-thumb-cell,
-  .pub-list.has-thumbs .pub-body { grid-column: 1; }
+  .pub-list.has-thumbs .pub-body,
+  .entry-list.has-thumbs .pub-thumb-cell,
+  .entry-list.has-thumbs .entry-body { grid-column: 1; }
   .pub-thumb { width: 100%; max-width: 240px; }
 
   .linkrow, .sectionnav ul { gap: 0 1rem; }
@@ -490,8 +609,14 @@ footer p { margin: 0; }
 
   .skip-link,
   .sectionnav,
+  .pub-filter,
   .portrait,
   footer { display: none; }   /* footer only repeats the contact row above */
+
+  /* Print every category regardless of the on-screen filter. The filter is a
+     browsing aid, not an editorial choice, and a printed publication list that
+     silently omits papers is a worse surprise than one that shows them all. */
+  .pub-group[hidden] { display: block !important; }
 
   .intro, .pagehead { padding-block: 0 0.5rem; }
   main { padding-block: 0.5rem 0; }

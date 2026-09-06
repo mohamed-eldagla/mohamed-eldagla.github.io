@@ -1,16 +1,81 @@
 [
   {
-    "role": "Research & Teaching Assistant",
-    "org": "German International University, Faculty of Informatics",
-    "orgUrl": "https://giu-uni.de/",
-    "dates": "Sep 2025 – present",
-    "description": "Big Data, Database Systems, and Introduction to Computer Science, reaching 100+ students. Tutorials on SQL and NoSQL, Apache Kafka pipelines, and relational algebra."
+    "course": "Data Engineering and Visualizations",
+    "term": "Winter 2026",
+    "role": "Teaching Assistant",
+    "org": "German International University in Cairo",
+    "orgUrl": null,
+    "thumbnail": "assets/thumbs/data-eng.jpg",
+    "description": "Lecturing 50 students on Data Exploration, Data Preprocessing, Data Orchestration, Data Integration and Visualizations; holding office hours; grading exams; leading project discussions; designing course materials."
   },
   {
-    "role": "Mentor",
-    "org": "Stanford Code in Place (CS106A)",
-    "orgUrl": "https://codeinplace.stanford.edu/",
-    "dates": "Apr – Jul 2026",
-    "description": "Weekly live sections for a program serving 16,000+ learners worldwide."
+    "course": "Big Data & NoSQL Databases",
+    "term": "Spring 2026",
+    "role": "Teaching Assistant",
+    "org": "German International University in Cairo",
+    "orgUrl": null,
+    "thumbnail": "assets/thumbs/big-data.jpg",
+    "description": "Led lectures and labs for 80 students on MongoDB, CassandraDB, SparkML, Kafka, and Hadoop; grading exams; led project discussions, and held office hours."
+  },
+  {
+    "course": "Programming I for Business Informatics",
+    "term": "Spring 2026",
+    "role": "Teaching Assistant",
+    "org": "German International University in Cairo",
+    "orgUrl": null,
+    "thumbnail": "assets/thumbs/python.png",
+    "description": "Taught 120 students on Python Fundamentals including variables, loops, and functions; creating exam and quiz questions; grading exams."
+  },
+  {
+    "course": "Databases",
+    "term": "Winter 2025",
+    "role": "Teaching Assistant",
+    "org": "German International University in Cairo",
+    "orgUrl": null,
+    "thumbnail": "assets/thumbs/db.png",
+    "description": "Lectured 154 students six times a week on SQL, Relational Algebra, Relational Calculus, and Database Design and Normalization; grading exams."
+  },
+  {
+    "course": "Code in Place (CS106A)",
+    "links": [
+      {
+        "label": "Course Website",
+        "url": "https://codeinplace.stanford.edu/"
+      },
+      {
+        "label": "Certificate",
+        "url": "https://digitalcredential.stanford.edu/check/6F32DA5BAB79ACDB9E94333A6B8038830C0D14F252E213E9234CECFC4521AD24NW1zVHZqbzhEOXkwZFJzRHppQlo2bDFXRnF4dnc0M3dwMitHZEV1Z2NQUHVDQ0dO"
+      }
+    ],
+    "term": "Apr – Jul 2026",
+    "role": "Section Leader (Mentor)",
+    "org": "Stanford University Code In Place",
+    "orgUrl": null,
+    "thumbnail": "assets/thumbs/karel.jpg",
+    "description": "Led weekly one-on-one sessions with volunteer section leaders teaching Stanford's introductory Python course, a programme offered free to 16,000+ learners worldwide."
+  },
+  {
+    "course": "Digital Egypt Cubs Initiative (DECI)",
+    "links": [
+      {
+        "label": "Programme Website",
+        "url": "https://deci.gov.eg/"
+      }
+    ],
+    "term": "Jul 2023 – Dec 2024",
+    "role": "Instructor",
+    "org": "Udacity",
+    "orgUrl": null,
+    "thumbnail": "assets/thumbs/deci.png",
+    "description": "Taught Python, data structures, and algorithms to 40 Egyptian students aged 12–17 through weekly 4-hour sessions. Used gamified activities and age-appropriate explanations to make complex concepts accessible and engaging."
+  },
+  {
+    "course": "Google Developer Student Clubs (DSC)",
+    "term": "Oct 2021 – May 2023",
+    "role": "Core Team Member & CS50x Instructor",
+    "org": "Egypt-Japan University of Science and Technology",
+    "orgUrl": null,
+    "thumbnail": "assets/thumbs/gdsc.jpg",
+    "description": "Delivered lectures on C++, data structures, and algorithms to 50+ undergraduates; instructed CS50x with weekly lectures reaching 100+ students on problem-solving and algorithmic thinking; ran coding sessions and supported students through the course."
   }
 ]
