@@ -130,7 +130,7 @@ courses grouped ahead of the mentoring roles, which reads better than strict dat
   "venue": "Journal or conference, or null",
   "venueDetail": "volume, article number, or null",
   "year": 2026,
-  "status": "published | in-submission | in-preparation",
+  "status": "published | accepted | in-submission | in-preparation",
   "metrics": { "quartile": "Q1", "impactFactor": "8.8" },
   "links": { "paper": "…", "doi": "…", "arxiv": "…", "code": "…", "bibtex": "…" },
   "thumbnail": "assets/… or null",

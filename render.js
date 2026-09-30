@@ -58,6 +58,7 @@
 
   var STATUS = {
     'published':      { label: 'Published',                 cls: 'is-published' },
+    'accepted':       { label: 'Accepted at',               cls: 'is-accepted' },
     'in-submission':  { label: 'Under review',              cls: 'is-submission' },
     'in-preparation': { label: 'Manuscript in preparation', cls: 'is-preparation' }
   };
@@ -112,7 +113,11 @@
       : p.title;
 
     var meta = [];
-    if (p.venue) {
+    if (p.status === 'accepted' && p.venue) {
+      meta.push(h('span', { class: 'status ' + status.cls }, status.label));
+      meta.push(' ');
+      meta.push(h('span', { class: 'venue' }, p.venue));
+    } else if (p.venue) {
       meta.push(h('span', { class: 'venue' }, p.venue));
       if (p.venueDetail) meta.push(' ' + p.venueDetail);
       if (p.year) meta.push(', ' + p.year);
@@ -126,8 +131,10 @@
       meta.push(sep());
       meta.push(bits.join(' · '));
     }
-    meta.push(sep());
-    meta.push(h('span', { class: 'status ' + status.cls }, status.label));
+    if (p.status !== 'accepted' || !p.venue) {
+      meta.push(sep());
+      meta.push(h('span', { class: 'status ' + status.cls }, status.label));
+    }
 
     /* Links ride on the metadata line rather than claiming a line of their own. */
     LINK_ORDER.forEach(function (key) {
