@@ -117,7 +117,8 @@
       meta.push(h('span', { class: 'acceptance-head' },
         status.label + ' ', h('strong', null, p.venue)));
       if (p.venueDetail) {
-        meta.push(h('span', { class: 'acceptance-workshop' }, p.venueDetail));
+        meta.push(h('span', { class: 'acceptance-workshop' },
+          p.venueUrl ? externalLink(p.venueUrl, p.venueDetail) : p.venueDetail));
       }
     } else if (p.venue) {
       meta.push(h('span', { class: 'venue' }, p.venue));

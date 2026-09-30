@@ -463,6 +463,7 @@ h2 {
 
 .acceptance-head strong { font-weight: 700; }
 .acceptance-workshop { display: block; }
+.acceptance-workshop a { text-decoration-color: currentColor; }
 
 .pub-summary {
   font-size: 0.95rem;

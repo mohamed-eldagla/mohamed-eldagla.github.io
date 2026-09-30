@@ -1,78 +1,110 @@
 [
   {
-    "name": "Emerging Leaders in AI (ELAI)",
-    "org": "Black in AI",
-    "year": 2026,
-    "description": "Selected for the Grad Prep Program, which pairs prospective graduate applicants with mentors for guidance through the PhD application process.",
-    "links": [
-      {
-        "url": "https://www.blackinai.org/our-work/emerging-leaders-in-ai-elai-grad-prep-program"
-      }
-    ]
-  },
-  {
-    "name": "Master's Fellowship",
+    "name": "GIU MSc Data Science Fellowship",
     "org": "German International University in Cairo",
     "year": 2025,
-    "description": "Full tuition, awarded on academic merit."
+    "description": "Full tuition for academic excellence."
   },
   {
-    "name": "Academic Excellence Recognition",
-    "org": "E-JUST",
+    "name": "E-JUST Academic Excellence",
+    "org": "Egypt-Japan University of Science and Technology",
     "year": 2025,
-    "description": "4.00 final-semester GPA, ranked 1 of 120; top 10% of cohort; 70% merit scholarship across the degree."
+    "description": "GPA 4.00; final-semester rank 1/120; graduated in the top 10%."
+  },
+  {
+    "name": "UPEC Master’s-Level AI Research Internship",
+    "org": "Université Paris-Est Créteil",
+    "year": 2025,
+    "description": "Selected as 1 of 30 from 1,300+ applicants as an undergraduate."
+  },
+  {
+    "name": "House of Representatives Academic Excellence Award",
+    "org": null,
+    "year": 2022
+  },
+  {
+    "name": "Fatima Institute for Global AI Research Fellowship",
+    "org": null,
+    "year": 2026,
+    "description": "1 of 67 fellows selected from 700+ applicants.",
+    "links": [{ "url": "https://fatima.institute/" }]
+  },
+  {
+    "name": "PRISM AI Safety Fellowship",
+    "org": null,
+    "year": 2026,
+    "description": "50 fellows from 800+ applicants (under 6.25% acceptance).",
+    "links": [{ "url": "https://prism-research.org/" }]
+  },
+  {
+    "name": "Black in AI Emerging Leaders in AI (ELAI)",
+    "org": null,
+    "year": 2026,
+    "links": [{ "url": "https://www.blackinai.org/our-work/emerging-leaders-in-ai-elai-grad-prep-program" }]
+  },
+  {
+    "name": "NTA Presidential Leadership Programme",
+    "org": "National Training Academy",
+    "year": 2023,
+    "description": "AI, CS, and leadership; alumni include 10+ ministers/governors.",
+    "links": [{ "url": "https://nta.eg" }]
+  },
+  {
+    "name": "Nasser Military Academy Shield",
+    "org": null,
+    "year": 2023,
+    "description": "Strategic Studies & National Security, Batch 98; youngest recipient; program prepares civilians for leadership roles."
+  },
+  {
+    "name": "United Nations COP27, Information Communication Technology Specialist",
+    "org": null,
+    "year": 2022,
+    "description": "Selected at a 0.04% acceptance rate."
+  },
+  {
+    "name": "Presidency of the Egyptian Cabinet Internship",
+    "org": null,
+    "year": 2025,
+    "description": "2% acceptance rate."
+  },
+  {
+    "name": "Certified Trainer of Trainers (TOT) in Sustainability",
+    "org": "Ministry of Planning and Economic Development",
+    "year": 2025,
+    "links": [{ "label": "Be an Ambassador", "url": "https://mped.gov.eg/DynamicPage?id=88&lang=en" }]
+  },
+  {
+    "name": "Be An Ambassador Program Award",
+    "org": "Ministry of Planning and Economic Development",
+    "year": 2025
+  },
+  {
+    "name": "Data Science Internship",
+    "org": "DataScience Middle East",
+    "year": null,
+    "description": "2nd place across the two-month hybrid cohort; SAS partner.",
+    "links": [{ "url": "https://datascience.me/" }]
   },
   {
     "name": "SAS Curiosity Cup",
     "org": null,
     "year": 2024,
-    "description": "Top 15 of 107 global participants.",
+    "description": "Global data science competition; Top 15 of 107 participants.",
     "links": [
-      {
-        "url": "https://www.sas.com/en_us/events/25q3/curiosity-cup.html"
-      },
-      {
-        "label": "Badge",
-        "url": "https://www.credly.com/badges/07a69768-87d1-45bf-8efa-12aef5e8d958/public_url"
-      },
-      {
-        "label": "Recognition",
-        "url": "assets/press/sas-curiosity-cup-2024.jpg"
-      }
+      { "url": "https://www.sas.com/en_us/events/25q3/curiosity-cup.html" },
+      { "label": "Badge", "url": "https://www.credly.com/badges/07a69768-87d1-45bf-8efa-12aef5e8d958/public_url" },
+      { "label": "Recognition", "url": "assets/press/sas-curiosity-cup-2024.jpg" }
     ]
   },
   {
-    "name": "Value Program Graduate",
-    "org": "National Training Academy (NTA)",
-    "year": 2023,
-    "description": "Presidential leadership programme affiliated with the Presidency of the Egyptian Republic, covering artificial intelligence, computer science, and leadership; its graduates include more than 10 ministers and governors.",
-    "links": [
-      {
-        "url": "https://nta.eg"
-      }
-    ]
+    "name": "Qubit X Qubit: Introduction to Quantum Computing",
+    "org": "Frontier Technology Institute and MIT",
+    "year": 2022
   },
   {
-    "name": "Data Science Internship — 2nd Place",
-    "org": "DataScience Middle East",
-    "year": null,
-    "links": [
-      {
-        "url": "https://datascience.me/"
-      }
-    ],
-    "description": "Placed second across the cohort of a two-month hybrid data science internship at a SAS partner."
-  },
-  {
-    "name": "Certified Trainer of Trainers (TOT)",
-    "org": null,
-    "year": null,
-    "links": [
-      {
-        "label": "Be an Ambassador",
-        "url": "https://mped.gov.eg/DynamicPage?id=88&lang=en"
-      }
-    ],
-    "description": "Qualified through the Be an Ambassador Program with the Ministry of Planning and Economic Development, and led a team delivering the presentation “AI for a Sustainable Future”."
+    "name": "IEEE Appx Hackathon",
+    "org": "Zewail City",
+    "year": 2020,
+    "description": "Ranked Top 10 of 700."
   }
 ]

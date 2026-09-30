@@ -12,7 +12,7 @@
     "mentorUrl": "https://www.amayuelas.me/",
     "affiliation": "Stanford HAI",
     "affiliationUrl": "https://hai.stanford.edu/",
-    "selectivity": "1 of 55 from 700+ applicants",
+    "selectivity": "1 of 67 from 700+ applicants",
     "description": "Curiosity-driven learning in LLM agents and multilingual AI safety."
   },
   {
@@ -28,24 +28,25 @@
     "mentorUrl": "https://rachelfreedman.github.io/",
     "affiliation": "UC Berkeley CHAI",
     "affiliationUrl": "https://humancompatible.ai/",
-    "selectivity": "1 of 50 from 800+ applicants",
+    "selectivity": "50 fellows from 800+ applicants (under 6.25% acceptance)",
     "description": "Reward model interpretability, with collaborators at Columbia, CMU, Stanford, UC Berkeley, AIMS, and Intel."
   },
   {
-    "name": "MIT AI Safety Fellowship",
+    "name": "MIT AI Alignment",
     "links": [
       {
-        "url": "https://aialignment.mit.edu/aisf/"
+        "url": "https://aialignment.mit.edu/aisf/summer-2026/fellows/",
+        "label": "Summer 2026 fellows"
       }
     ],
-    "role": "Research Fellow",
-    "dates": "Jun – Aug 2026",
+    "role": "AI Safety Fellow",
+    "dates": "June 2026 – August 2026",
     "mentor": null,
     "mentorUrl": null,
     "affiliation": null,
     "affiliationUrl": null,
-    "selectivity": "Selected from 300+ applicants",
-    "description": "Alignment, scalable oversight, and mechanistic interpretability."
+    "selectivity": null,
+    "description": "Studied alignment, scalable oversight, and mechanistic interpretability. Discussed reward misspecification, alignment faking, and AI threat models in weekly reading groups."
   },
   {
     "name": "Université Paris-Est Créteil",
