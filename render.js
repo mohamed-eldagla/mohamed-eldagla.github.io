@@ -114,9 +114,11 @@
 
     var meta = [];
     if (p.status === 'accepted' && p.venue) {
-      meta.push(h('span', { class: 'status ' + status.cls }, status.label));
-      meta.push(' ');
-      meta.push(h('span', { class: 'venue' }, p.venue));
+      meta.push(h('span', { class: 'acceptance-head' },
+        status.label + ' ', h('strong', null, p.venue)));
+      if (p.venueDetail) {
+        meta.push(h('span', { class: 'acceptance-workshop' }, p.venueDetail));
+      }
     } else if (p.venue) {
       meta.push(h('span', { class: 'venue' }, p.venue));
       if (p.venueDetail) meta.push(' ' + p.venueDetail);

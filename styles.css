@@ -455,6 +455,15 @@ h2 {
   margin-bottom: 0.3rem;
 }
 
+.acceptance-head {
+  display: block;
+  color: var(--fg);
+  font-weight: 600;
+}
+
+.acceptance-head strong { font-weight: 700; }
+.acceptance-workshop { display: block; }
+
 .pub-summary {
   font-size: 0.95rem;
   color: var(--muted);
@@ -463,9 +472,8 @@ h2 {
 
 
 /* ---------- publication status ----------
-   No color and no chips, so the distinction has to live in wording and slant.
-   A venue name is upright; an unpublished status is italic and explicitly
-   worded, so "Manuscript in preparation" can never be skimmed as a venue. */
+   Unpublished statuses are italic and explicitly worded, so "Manuscript in
+   preparation" cannot be skimmed as a venue. */
 
 .status.is-published { font-style: normal; }
 

@@ -128,7 +128,7 @@ courses grouped ahead of the mentoring roles, which reads better than strict dat
   "authors": ["Last, F. M.", "…"],
   "meIndex": 0,
   "venue": "Journal or conference, or null",
-  "venueDetail": "volume, article number, or null",
+  "venueDetail": "workshop name, volume, article number, or null",
   "year": 2026,
   "status": "published | accepted | in-submission | in-preparation",
   "metrics": { "quartile": "Q1", "impactFactor": "8.8" },
