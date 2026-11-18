@@ -9,17 +9,18 @@ build step — clone it in five years and it still runs.
 |---|---|---|
 | `/` | `index.html` | Name, photo, one-paragraph bio, contact links. One screen, all hardcoded |
 | `/publications/` | `publications/index.html` | Papers grouped by category, rendered from JSON |
-| `/teaching/` | `teaching/index.html` | Courses taught, rendered from JSON |
-| `/awards/` | `awards/index.html` | Honors and awards, rendered from JSON |
-| `/cv/` | `cv/index.html` | Research experience, industry experience, education, plus the PDF |
-| `/blog/` | `blog/index.html` | Posts; one placeholder title so far |
+| `/talks/` | `talks/index.html` | Talks, grouped by year, rendered from JSON |
+| `/teaching/` | `teaching/index.html` | Courses taught, grouped by institution, rendered from JSON |
+| `/awards/` | `awards/index.html` | Honors and awards, grouped by year, rendered from JSON |
+| `/cv/` | `cv/index.html` | Research experience, industry experience, education, academic service, plus the PDF |
+| `/blog/` | `blog/index.html` | Posts; two placeholder titles so far |
 
-Publications, teaching, and awards each own a top-level page rather than living inside the CV, so
+Publications, talks, teaching, and awards each own a top-level page rather than living inside the CV, so
 the nav links straight to them. The CV page carries the sections that have no page of their own
 and links out to the rest. Nothing is duplicated: exactly one page renders each JSON file.
 
 The nav is hand-written in each page's `<head>`-to-`<body>` block rather than injected by JS, so
-it survives with scripting off. Adding a route means editing the same `<ul>` in every page — six
+it survives with scripting off. Adding a route means editing the same `<ul>` in every page — seven
 files — and adding a line to `sitemap.xml`.
 
 The homepage is deliberately hardcoded and JS-free: the content most people will ever read should
@@ -34,7 +35,7 @@ python3 -m http.server 8000
 Then open <http://localhost:8000>.
 
 A server is required. Opening the files directly via `file://` renders the homepage fine but
-leaves `/publications/`, `/teaching/`, `/awards/`, and `/cv/` empty, because browsers block `fetch()` of local JSON under the
+leaves `/publications/`, `/talks/`, `/teaching/`, `/awards/`, and `/cv/` empty, because browsers block `fetch()` of local JSON under the
 `file://` origin.
 
 ## Editing content
@@ -46,15 +47,26 @@ All list content lives in `data/*.json`. Adding a paper means adding one object 
 |---|---|
 | `data/publications.json` | Publications (`/publications/`) |
 | `data/research.json` | Research Experience — fellowships, internships, lab roles (`/cv/`) |
-| `data/teaching.json` | Teaching — one object per course (`/teaching/`) |
+| `data/talks.json` | Talks (`/talks/`) |
+| `data/teaching.json` | Teaching — groups of courses, one group per institution (`/teaching/`) |
 | `data/experience.json` | Experience (`/cv/`) |
 | `data/education.json` | Education (`/cv/`) |
+| `data/service.json` | Academic Service (`/cv/`) |
 | `data/honors.json` | Honors & Awards (`/awards/`) |
 
 Education used to be hardcoded in `cv/index.html`. It moved into JSON once entries grew a links
 row: hand-written markup would have had to repeat the `aria-hidden` arrow and the visually-hidden
 suffix, and would drift from `render.js` the next time either changed. It shares
 `experience.json`'s shape and renders through the same function.
+
+### Page layouts
+
+The CV, Awards, and Talks pages use one layout: dates in a narrow left column, the entry on the
+right. On Awards and Talks the year shows once per group, with a hairline between years, so the
+order of the JSON matters — keep them newest first. On the CV every row shows its own date range,
+the organisation is the title, the role sits beneath it in muted type, and an optional `bullets`
+array renders as a short list (falling back to `description` when there are no bullets). Below
+640px the date column folds above each entry.
 
 `render.js` resolves data paths from its own location, so the same file works from any page and
 survives being deployed into a subdirectory.
@@ -95,39 +107,27 @@ courses (four GIU courses as one TA) is stated once in the group heading rather 
 In a course, the first entry in `links` becomes the title link; any further links trail the
 description. Elsewhere on the site, links follow the same rule.
 
-`links` is an optional list of `{label, url}` pairs rendered on their own row beneath the entry,
-several separated by `·`, each followed by a small ↗. Omit the key entirely when there is nothing
-to link.
+`links` is an optional list of `{label, url}` pairs, used the same way on every page: the
+**first** link becomes the entry's title link (marked with a small ↗), and any further links trail
+the last line of the entry, separated by `·`. Nothing renders as a row of bare links between the
+title and the text. Omit the key entirely when there is nothing to link.
 
 **`label` is optional.** Omit it and the link shows its own domain (`fatima.institute`,
-`aialignment.mit.edu`), derived from the URL so the two can never drift apart — change the URL and
-the visible label follows. That is the right default on the CV, where every entry would otherwise
-carry an identical, uninformative "Website". Give an explicit `label` only where it says something
-the domain does not: a course page is labelled `Course Website` because the entry title is the
-course, not the site.
+`aialignment.mit.edu`), derived from the URL so the two can never drift apart. Give an explicit
+`label` for links shown as text — `Certificate`, `Video`, `Badge` — where the word says more than a
+domain would. A label on the first link is unused, since that link is the title.
 
-The ↗ is `aria-hidden`, so it is never read aloud, and each link carries a visually-hidden suffix
-naming its entry — several links reading "Website" or "fatima.institute" are clear beside their
-headings but identical in a screen reader's link list, which is how many people navigate.
-
-The same `links` field works in `research.json` and `experience.json` — one `entryLinks()` helper
-renders all three — so every entry on the site offers its links the same way.
-
-Keeping URLs in `links` rather than on the course title means it is visible what you are about to
-open, and it lets an entry name two bodies without either link misattributing the work — DECI is
-that case, where the programme belongs to Egypt's Ministry of Communications and Information
-Technology but the employment was through Udacity.
-
-`orgUrl` may be `null`, which renders the organisation as plain text — used for the repeated
-university name, where four identical links in a row were noise rather than navigation.
+The ↗ is `aria-hidden`, so it is never read aloud, and each trailing link carries a
+visually-hidden suffix naming its entry — several links reading "Certificate" or "Video" are
+clear on the page but identical in a screen reader's link list, which is how many people navigate.
 
 `thumbnail` takes the same 480×240 image treatment as a publication (see **Thumbnails** below);
-drop files into `assets/thumbs/teaching/`. The 160px column appears only once at least one entry
+drop files into `assets/thumbs/`. The 160px column appears only once at least one entry
 has an image, so the page reads correctly while they are still being added, and an entry without
 one leaves the column empty rather than showing a placeholder graphic.
 
-Entries render in file order. They are currently reverse-chronological with the university
-courses grouped ahead of the mentoring roles, which reads better than strict date order.
+Groups and the courses inside them render in file order: currently GIU first, then
+"Other teaching", each newest first.
 
 ### Publication fields
 
