@@ -335,21 +335,39 @@
      programme is run by one body while the teaching contract sits with another
      can name both without either link misattributing the work. */
   function course(c) {
-    var affil = [c.role, ' \u2014 '];
-    affil.push(c.orgUrl ? externalLink(c.orgUrl, c.org) : c.org);
-
-
+    var when = [c.term];
+    if (c.students) when.push(' · ' + c.students + ' students');
+    var desc = [];
+    if (c.description) desc.push(c.description);
+    desc.push(inlineLinks((c.links || []).slice(1), c.course));
     var thumb = thumbCell(c.thumbnail);
-
     return h('li', { class: 'entry' + (thumb ? '' : ' no-thumb') },
       thumb,
       h('div', { class: 'entry-body' },
-        entryHead(c.course, c.term),
-        h('p', { class: 'course-affil' }, affil),
-        entryLinks(c.links, c.course),
-        c.description ? h('p', { class: 'entry-desc' }, c.description) : null
+        entryHead(linkedTitle(c.course, c.links), when),
+        c.role ? h('p', { class: 'course-affil' }, c.role) : null,
+        desc.length ? h('p', { class: 'entry-desc' }, desc) : null
       )
     );
+  }
+
+  /* Courses are grouped under the institution that employed the teaching, so
+     a role shared by several courses is stated once in the group heading. */
+  function teachingGroups(groups) {
+    return groups.map(function (g, i) {
+      var id = 'teach-' + i;
+      var list = h('ul', { class: 'entry-list', role: 'list' }, g.courses.map(course));
+      if (g.courses.some(function (c) { return c.thumbnail; })) list.classList.add('has-thumbs');
+      return h('section', { class: 'teach-group', 'aria-labelledby': id },
+        h('div', { class: 'teach-group-head' },
+          h('div', { class: 'entry-head' },
+            h('h2', { class: 'teach-group-h', id: id },
+              g.url ? h('a', { href: resolve(g.url), rel: 'noopener' }, g.heading, arrow()) : g.heading),
+            g.dates ? h('span', { class: 'entry-dates' }, g.dates) : null),
+          g.role ? h('p', { class: 'entry-sub' }, g.role) : null),
+        list
+      );
+    });
   }
 
 
@@ -453,7 +471,7 @@
   var SECTIONS = [
     { file: 'publications', target: 'pub-list',        group:  publicationGroups },
     { file: 'research',     target: 'research-list',   render: cvRow },
-    { file: 'teaching',     target: 'teaching-list',   render: course },
+    { file: 'teaching',     target: 'teaching-list',   group:  teachingGroups },
     { file: 'experience',   target: 'experience-list', render: cvRow },
     { file: 'education',    target: 'education-list',  render: cvRow },
     { file: 'honors',       target: 'honors-list',     render: honorRow },

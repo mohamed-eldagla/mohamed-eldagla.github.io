@@ -69,21 +69,31 @@ layout — but if you change the data much, re-measure and update them.
 
 ### Teaching fields
 
-One object per course taught, not per employer — four courses at the same university are four
-entries, which is what makes the page read as a teaching record rather than a job history.
+Courses are grouped under the institution that employed the teaching, so a role shared by several
+courses (four GIU courses as one TA) is stated once in the group heading rather than on every row.
 
 ```json
 {
-  "course": "Big Data & NoSQL Databases",
-  "term": "Spring 2026",
-  "role": "Teaching Assistant",
-  "org": "German International University in Cairo",
-  "orgUrl": "https://… or null",
-  "thumbnail": "assets/thumbs/teaching/… or null",
-  "links": [{ "label": "Course Website", "url": "https://…" }],
-  "description": "One sentence on what was actually taught."
+  "heading": "German International University in Cairo",
+  "url": "https://… (optional; links the heading)",
+  "role": "Teaching Assistant, Faculty of Informatics (optional)",
+  "dates": "Winter 2025 – present (optional)",
+  "courses": [
+    {
+      "course": "Big Data & NoSQL Databases",
+      "term": "Spring 2026",
+      "students": 80,
+      "role": "Only for courses outside a shared-role group",
+      "thumbnail": "assets/thumbs/… or null",
+      "links": [{ "label": "Course Website", "url": "https://…" }],
+      "description": "One or two lines on what was actually taught."
+    }
+  ]
 }
 ```
+
+In a course, the first entry in `links` becomes the title link; any further links trail the
+description. Elsewhere on the site, links follow the same rule.
 
 `links` is an optional list of `{label, url}` pairs rendered on their own row beneath the entry,
 several separated by `·`, each followed by a small ↗. Omit the key entirely when there is nothing
