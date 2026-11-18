@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Talks — Mohamed Eldagla</title>
+<meta name="description" content="Talks and presentations by Mohamed Eldagla, including a NeurIPS 2026 workshop oral on reward model interpretability.">
+<link rel="canonical" href="https://mohamed-eldagla.github.io/talks/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Talks — Mohamed Eldagla">
+<meta property="og:description" content="Talks and presentations by Mohamed Eldagla, including a NeurIPS 2026 workshop oral on reward model interpretability.">
+<meta property="og:url" content="https://mohamed-eldagla.github.io/talks/">
+<meta property="og:image" content="https://mohamed-eldagla.github.io/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mohamed-eldagla.github.io/assets/og-image.png">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="../assets/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../styles.css">
+
+<!-- Applies a stored theme before first paint. Must stay inline and blocking:
+     loading it as a file would flash the wrong theme on every visit. -->
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<script src="../theme.js" defer></script>
+
+<!-- Start the data fetch during parse so the list renders before first paint
+     rather than shifting the page after it. -->
+<link rel="preload" as="fetch" crossorigin href="../data/talks.json">
+<script src="../render.js" defer></script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<nav class="sectionnav" aria-label="Main">
+  <div class="wrap navbar">
+    <ul role="list">
+      <li><a href="../">Home</a></li>
+      <li><a href="../publications/">Publications</a></li>
+      <li><a href="./" aria-current="page">Talks</a></li>
+      <li><a href="../teaching/">Teaching</a></li>
+      <li><a href="../awards/">Awards</a></li>
+      <li><a href="../cv/">CV</a></li>
+      <li><a href="../blog/">Blog</a></li>
+    </ul>
+    <button type="button" class="theme-switch" id="theme-toggle" role="switch"
+            aria-checked="false" title="Toggle dark mode" hidden>
+      <span class="theme-switch-track"><span class="theme-switch-knob"></span></span>
+      <span class="visually-hidden">Dark mode</span>
+    </button>
+  </div>
+</nav>
+
+<header class="pagehead wrap">
+  <h1>Talks</h1>
+  <p class="position">Talks and presentations. Papers are listed under <a href="../publications/">Publications</a>.</p>
+</header>
+
+<main id="main" class="wrap">
+  <section aria-labelledby="talks-h">
+    <h2 id="talks-h" class="visually-hidden">Talks</h2>
+    <ul class="entry-list" role="list" id="talks-list"></ul>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p>
+    mohamed.eldagla [at] giu-uni.de
+    <span class="sep">·</span>
+    <a href="../">Home</a>
+  </p>
+</footer>
+
+</body>
+</html>
