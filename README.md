@@ -162,6 +162,10 @@ Groups and the courses inside them render in file order: currently GIU first, th
   omits papers is the worse surprise.
 - `meIndex` is the zero-based position of your own name in `authors`; the renderer bolds that
   entry. It never string-matches a name, so co-authors who share a surname stay unbolded.
+- `equalContribution` (optional) lists the zero-based positions of equal-contribution authors;
+  each gets a superscript `*` and the line ends with "(*equal contribution)".
+- `highlight` (optional) is one bold line under the venue for a distinction such as an oral, e.g.
+  `"Oral presentation (1 of 4 orals from 267 submissions, ≈1.5%)"`.
 - `status` renders as an explicit label on every entry. The design is monochrome, so the
   distinction lives in wording and slant rather than color: a venue name is upright, while
   `in-preparation` is italic and spelled out as "Manuscript in preparation". It therefore survives
