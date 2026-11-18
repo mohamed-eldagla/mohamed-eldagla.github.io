@@ -19,7 +19,7 @@
     "metrics": null,
     "links": {},
     "thumbnail": "assets/thumbs/rbd.jpg",
-    "summary": "Reward Basis Decomposition (RBD) separates shared population preferences from per-user directions, revealing whether reward models encode meaningful individual-level preference structure.",
+    "summary": "Reward Basis Decomposition (RBD) separates shared population preferences from per-user directions, revealing whether reward models encode meaningful individual-level preference structure. Reproducing Meta’s LoRe, we helped fix a data shortcut that had inflated its accuracy from 59% to 93%, and found that most personalization gains come from shared preferences.",
     "equalContribution": [
       0,
       1,
