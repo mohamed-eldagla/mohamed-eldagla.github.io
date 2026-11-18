@@ -335,9 +335,14 @@
      programme is run by one body while the teaching contract sits with another
      can name both without either link misattributing the work. */
   function course(c) {
-    var affil = [c.role, ' \u2014 '];
-    affil.push(c.orgUrl ? externalLink(c.orgUrl, c.org) : c.org);
-
+    /* Courses inside an institution group carry no role or org of their own;
+       the group heading states them once. */
+    var affil = null;
+    if (c.role || c.org) {
+      affil = [c.role];
+      if (c.role && c.org) affil.push(' \u2014 ');
+      if (c.org) affil.push(c.orgUrl ? externalLink(c.orgUrl, c.org) : c.org);
+    }
 
     var thumb = thumbCell(c.thumbnail);
 
@@ -345,7 +350,7 @@
       thumb,
       h('div', { class: 'entry-body' },
         entryHead(c.course, c.term),
-        h('p', { class: 'course-affil' }, affil),
+        affil ? h('p', { class: 'course-affil' }, affil) : null,
         entryLinks(c.links, c.course),
         c.description ? h('p', { class: 'entry-desc' }, c.description) : null
       )
@@ -353,6 +358,22 @@
   }
 
 
+
+  /* Teaching is grouped by institution, so a role shared by several courses
+     (four GIU courses as one TA) is stated once in the heading. */
+  function teachingGroups(groups) {
+    return groups.map(function (g, i) {
+      var id = 'teach-' + i;
+      var list = h('ul', { class: 'entry-list', role: 'list' }, g.courses.map(course));
+      if (g.courses.some(function (c) { return c.thumbnail; })) list.classList.add('has-thumbs');
+      return h('section', { class: 'teach-group', 'aria-labelledby': id },
+        h('h2', { class: 'teach-group-h', id: id },
+          g.url ? externalLink(g.url, g.heading) : g.heading),
+        g.role ? h('p', { class: 'course-affil teach-group-role' }, g.role) : null,
+        list
+      );
+    });
+  }
 
   /* ---------- dated lists (CV, awards, talks) ----------
      A narrow date column on the left and the entry on the right. Links are
@@ -453,7 +474,7 @@
   var SECTIONS = [
     { file: 'publications', target: 'pub-list',        group:  publicationGroups },
     { file: 'research',     target: 'research-list',   render: cvRow },
-    { file: 'teaching',     target: 'teaching-list',   render: course },
+    { file: 'teaching',     target: 'teaching-list',   group:  teachingGroups },
     { file: 'experience',   target: 'experience-list', render: cvRow },
     { file: 'education',    target: 'education-list',  render: cvRow },
     { file: 'honors',       target: 'honors-list',     render: honorRow },

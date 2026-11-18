@@ -48,7 +48,7 @@ All list content lives in `data/*.json`. Adding a paper means adding one object 
 | `data/publications.json` | Publications (`/publications/`) |
 | `data/research.json` | Research Experience — fellowships, internships, lab roles (`/cv/`) |
 | `data/talks.json` | Talks (`/talks/`) |
-| `data/teaching.json` | Teaching — one object per course (`/teaching/`) |
+| `data/teaching.json` | Teaching — courses grouped by institution (`/teaching/`) |
 | `data/experience.json` | Experience (`/cv/`) |
 | `data/education.json` | Education (`/cv/`) |
 | `data/service.json` | Academic Service (`/cv/`) |
@@ -81,8 +81,21 @@ layout — but if you change the data much, re-measure and update them.
 
 ### Teaching fields
 
-One object per course taught, not per employer — four courses at the same university are four
-entries, which is what makes the page read as a teaching record rather than a job history.
+Courses sit in groups. A group with a shared role (the four GIU courses) states the institution
+and role once in its heading, and its courses omit `role`/`org`; the "Other teaching" group has no
+role, so each of its courses keeps its own. Each course is still its own entry with its own image,
+which is what makes the page read as a teaching record rather than a job history.
+
+```json
+{
+  "heading": "German International University in Cairo",
+  "url": "https://… (optional; links the heading)",
+  "role": "Teaching Assistant, Faculty of Informatics (optional)",
+  "courses": [ … ]
+}
+```
+
+A course:
 
 ```json
 {

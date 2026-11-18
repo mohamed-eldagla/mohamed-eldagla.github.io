@@ -743,3 +743,10 @@ footer p { margin: 0; }
   .pub, .entry { break-inside: avoid; }
   h2, h3 { break-after: avoid; }
 }
+
+/* ---------- teaching groups ---------- */
+
+.teach-group + .teach-group { margin-block-start: 2.25rem; }
+.teach-group-h { font-size: 1.2rem; margin: 0; }
+.teach-group-role { margin-block: 0.15rem 1rem; }
+.teach-group-h + .entry-list { margin-block-start: 1rem; }
