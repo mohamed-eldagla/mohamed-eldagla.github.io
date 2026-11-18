@@ -3,7 +3,8 @@
     "title": "Reward Basis Decomposition for Interpreting Preference Heterogeneity",
     "venue": "Oral presentation, NeurIPS 2026 Workshop: Interpretability as Science",
     "venueUrl": "https://interpscience.github.io/",
-    "date": "Dec 2026"
+    "date": "Dec 2026",
+    "upcoming": true
   },
   {
     "title": "Do People Really Want Different Things? Reward Basis Decomposition Explained",

@@ -238,8 +238,9 @@ theme on every load.
 1. **ORCID.** If you register one, add it to the `sameAs` array in the JSON-LD block in
    `index.html`. That array is what tells indexers your Scholar, GitHub, and LinkedIn profiles are
    the same person.
-2. **Blog.** `blog/index.html` has one placeholder title ("Prerequisites Are All You Need", marked
-   *Coming soon*). Replace it with the real post when it exists — a nav item leading to a page of
+2. **Blog.** `blog/index.html` has two placeholder titles ("Do People Really Want Different
+   Things? Reward Basis Decomposition" and "Prerequisites Are All You Need", both marked
+   *Coming soon*). Replace them with the real posts when they exist — a nav item leading to a page of
    nothing but placeholders reads as abandoned.
 
 ## Deploying

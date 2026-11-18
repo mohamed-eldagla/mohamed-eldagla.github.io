@@ -1,28 +1,5 @@
 [
   {
-    "name": "GIU MSc Data Science Fellowship",
-    "org": "German International University in Cairo",
-    "year": 2025,
-    "description": "Full tuition for academic excellence."
-  },
-  {
-    "name": "E-JUST Academic Excellence",
-    "org": "Egypt-Japan University of Science and Technology",
-    "year": 2025,
-    "description": "GPA 4.00; final-semester rank 1/120; graduated in the top 10%."
-  },
-  {
-    "name": "UPEC Master’s-Level AI Research Internship",
-    "org": "Université Paris-Est Créteil",
-    "year": 2025,
-    "description": "Selected as 1 of 30 from 1,300+ applicants as an undergraduate."
-  },
-  {
-    "name": "House of Representatives Academic Excellence Award",
-    "org": null,
-    "year": 2022
-  },
-  {
     "name": "Fatima Institute for Global AI Research Fellowship",
     "org": null,
     "year": 2026,
@@ -56,27 +33,33 @@
     "description": "Top-ranked participant in the 2026–27 cohort."
   },
   {
-    "name": "NTA Presidential Leadership Programme",
-    "org": "National Training Academy",
-    "year": 2023,
-    "description": "AI, CS, and leadership; alumni include 10+ ministers/governors.",
+    "name": "MIT AI Alignment, AI Safety Fundamentals Fellow",
+    "org": null,
+    "year": 2026,
+    "description": "Reading group on alignment and interpretability (Summer 2026).",
     "links": [
       {
-        "url": "https://nta.eg"
+        "url": "https://aialignment.mit.edu/aisf/summer-2026/fellows/"
       }
     ]
   },
   {
-    "name": "Nasser Military Academy Shield",
-    "org": null,
-    "year": 2023,
-    "description": "Strategic Studies & National Security, Batch 98; youngest recipient; program prepares civilians for leadership roles."
+    "name": "GIU MSc Data Science Fellowship",
+    "org": "German International University in Cairo",
+    "year": 2025,
+    "description": "Full tuition for academic excellence."
   },
   {
-    "name": "UN Climate Change Conference (COP27), ICT Volunteer",
-    "org": null,
-    "year": 2022,
-    "description": "Selected at a 0.04% acceptance rate."
+    "name": "E-JUST Academic Excellence",
+    "org": "Egypt-Japan University of Science and Technology",
+    "year": 2025,
+    "description": "GPA 4.00; final-semester rank 1/120; graduated in the top 10%."
+  },
+  {
+    "name": "UPEC Master’s-Level AI Research Internship",
+    "org": "Université Paris-Est Créteil",
+    "year": 2025,
+    "description": "Selected as 1 of 30 from 1,300+ applicants as an undergraduate."
   },
   {
     "name": "Presidency of the Egyptian Cabinet Internship",
@@ -131,9 +114,43 @@
     ]
   },
   {
+    "name": "NTA Presidential Leadership Program",
+    "org": "National Training Academy",
+    "year": 2023,
+    "description": "AI, CS, and leadership; alumni include 10+ ministers/governors.",
+    "links": [
+      {
+        "url": "https://nta.eg"
+      }
+    ]
+  },
+  {
+    "name": "Nasser Military Academy Shield",
+    "org": null,
+    "year": 2023,
+    "description": "Strategic Studies & National Security, Batch 98; youngest recipient; program prepares civilians for leadership roles."
+  },
+  {
+    "name": "House of Representatives Academic Excellence Award",
+    "org": null,
+    "year": 2022
+  },
+  {
+    "name": "UN Climate Change Conference (COP27), ICT Volunteer",
+    "org": null,
+    "year": 2022,
+    "description": "Selected at a 0.04% acceptance rate."
+  },
+  {
     "name": "Qubit X Qubit: Introduction to Quantum Computing",
     "org": "Frontier Technology Institute and MIT",
     "year": 2022
+  },
+  {
+    "name": "E-JUST Misr El Kheir Merit Scholarship",
+    "org": "Egypt-Japan University of Science and Technology",
+    "year": 2022,
+    "description": "75% undergraduate tuition for academic excellence."
   },
   {
     "name": "IEEE Appx Hackathon",

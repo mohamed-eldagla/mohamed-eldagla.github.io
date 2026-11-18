@@ -397,7 +397,9 @@
     return h('li', { class: 'entry' },
       entryHead(t.title, t.date),
       entryLinks(t.links, t.title),
-      h('p', { class: 'entry-desc' }, t.venueUrl ? externalLink(t.venueUrl, t.venue) : t.venue)
+      h('p', { class: 'entry-desc' },
+        t.venueUrl ? externalLink(t.venueUrl, t.venue) : t.venue,
+        t.upcoming ? [sep(), h('span', { class: 'status is-preparation' }, 'Upcoming')] : null)
     );
   }
 
