@@ -207,7 +207,7 @@ The site uses system fonts only — there is no webfont to host, preload, or eve
 
 ## Email
 
-The addresses are shown as text (`mohamed.eldagla [at] giu-uni.de` and `meldagla3 [at] gmail.com`) with **no `mailto:` link**, which
+The addresses are shown as text (`meldagla3 [at] gmail.com` and `mohamed.eldagla [at] giu-uni.de`) with **no `mailto:` link**, which
 is the point: a `mailto:` href is trivially scraped, so linking it would undo the obfuscation. The
 cost is that visitors cannot click to compose — if you would rather have that, replace the
 `.email` line in `index.html` with a normal `mailto:` anchor.
