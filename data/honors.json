@@ -26,28 +26,45 @@
     "name": "Fatima Institute for Global AI Research Fellowship",
     "org": null,
     "year": 2026,
-    "description": "1 of 67 fellows selected from 700+ applicants.",
-    "links": [{ "url": "https://fatima.institute/" }]
+    "description": "1 of 67 fellows selected from 700+ applicants; includes compute support.",
+    "links": [
+      {
+        "url": "https://fatima.institute/"
+      }
+    ]
   },
   {
     "name": "PRISM AI Safety Fellowship",
     "org": null,
     "year": 2026,
-    "description": "50 fellows from 800+ applicants (under 6.25% acceptance).",
-    "links": [{ "url": "https://prism-research.org/" }]
+    "description": "1 of 50 fellows selected from 800+ applicants.",
+    "links": [
+      {
+        "url": "https://prism-research.org/"
+      }
+    ]
   },
   {
     "name": "Black in AI Emerging Leaders in AI (ELAI)",
     "org": null,
     "year": 2026,
-    "links": [{ "url": "https://www.blackinai.org/our-work/emerging-leaders-in-ai-elai-grad-prep-program" }]
+    "links": [
+      {
+        "url": "https://www.blackinai.org/our-work/emerging-leaders-in-ai-elai-grad-prep-program"
+      }
+    ],
+    "description": "Top-ranked participant in the 2026–27 cohort."
   },
   {
     "name": "NTA Presidential Leadership Programme",
     "org": "National Training Academy",
     "year": 2023,
     "description": "AI, CS, and leadership; alumni include 10+ ministers/governors.",
-    "links": [{ "url": "https://nta.eg" }]
+    "links": [
+      {
+        "url": "https://nta.eg"
+      }
+    ]
   },
   {
     "name": "Nasser Military Academy Shield",
@@ -56,7 +73,7 @@
     "description": "Strategic Studies & National Security, Batch 98; youngest recipient; program prepares civilians for leadership roles."
   },
   {
-    "name": "United Nations COP27, Information Communication Technology Specialist",
+    "name": "UN Climate Change Conference (COP27), ICT Volunteer",
     "org": null,
     "year": 2022,
     "description": "Selected at a 0.04% acceptance rate."
@@ -71,7 +88,12 @@
     "name": "Certified Trainer of Trainers (TOT) in Sustainability",
     "org": "Ministry of Planning and Economic Development",
     "year": 2025,
-    "links": [{ "label": "Be an Ambassador", "url": "https://mped.gov.eg/DynamicPage?id=88&lang=en" }]
+    "links": [
+      {
+        "label": "Be an Ambassador",
+        "url": "https://mped.gov.eg/DynamicPage?id=88&lang=en"
+      }
+    ]
   },
   {
     "name": "Be An Ambassador Program Award",
@@ -81,9 +103,13 @@
   {
     "name": "Data Science Internship",
     "org": "DataScience Middle East",
-    "year": null,
+    "year": 2024,
     "description": "2nd place across the two-month hybrid cohort; SAS partner.",
-    "links": [{ "url": "https://datascience.me/" }]
+    "links": [
+      {
+        "url": "https://datascience.me/"
+      }
+    ]
   },
   {
     "name": "SAS Curiosity Cup",
@@ -91,9 +117,17 @@
     "year": 2024,
     "description": "Global data science competition; Top 15 of 107 participants.",
     "links": [
-      { "url": "https://www.sas.com/en_us/events/25q3/curiosity-cup.html" },
-      { "label": "Badge", "url": "https://www.credly.com/badges/07a69768-87d1-45bf-8efa-12aef5e8d958/public_url" },
-      { "label": "Recognition", "url": "assets/press/sas-curiosity-cup-2024.jpg" }
+      {
+        "url": "https://www.sas.com/en_us/events/25q3/curiosity-cup.html"
+      },
+      {
+        "label": "Badge",
+        "url": "https://www.credly.com/badges/07a69768-87d1-45bf-8efa-12aef5e8d958/public_url"
+      },
+      {
+        "label": "Recognition",
+        "url": "assets/press/sas-curiosity-cup-2024.jpg"
+      }
     ]
   },
   {

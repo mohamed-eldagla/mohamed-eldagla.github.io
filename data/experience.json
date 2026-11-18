@@ -10,15 +10,15 @@
     ],
     "dates": "Jul – Sep 2025",
     "selectivity": null,
-    "description": "Led a Prime Minister-sponsored RAG rumor-detection system for the national “Ask Egypt” platform."
+    "description": "Built a Prime Minister-sponsored retrieval-augmented chatbot that assesses emerging rumors on the national “Chat Egypt” platform, as the sole developer during the internship; the system was later extended and deployed. Also built pipelines for automated verification of news content from trusted governmental and media sources."
   },
   {
-    "role": "ICT Specialist",
-    "org": "United Nations COP27",
+    "role": "Volunteer, Information & Communication Technology",
+    "org": "UN Climate Change Conference (COP27), UNFCCC",
     "orgUrl": null,
     "dates": "Oct – Nov 2022",
     "selectivity": null,
-    "description": "Supported the conference mobile application alongside MCIT and UN engineering teams.",
+    "description": "Helped develop an indoor navigation system integrated into the COP27 mobile app with MCIT and UN engineers, and managed the UN Climate Change YouTube channel from the conference’s Master Control Room.",
     "links": [
       {
         "url": "https://unfccc.int/cop27"

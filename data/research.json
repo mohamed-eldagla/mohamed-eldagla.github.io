@@ -13,7 +13,7 @@
     "affiliation": "Stanford HAI",
     "affiliationUrl": "https://hai.stanford.edu/",
     "selectivity": "1 of 67 from 700+ applicants",
-    "description": "Curiosity-driven learning in LLM agents and multilingual AI safety."
+    "description": "Curiosity-driven learning in LLM agents (master’s thesis), testing surprisal, learning progress, and information gain as curiosity signals across inference, SFT, and GRPO. Also auditing multilingual specification-following with Tasmiah Tahsin Mayeesha (UNT) and Md Kishor Morol (Anthropic)."
   },
   {
     "name": "PRISM AI Safety Research Fellowship",
@@ -23,13 +23,13 @@
       }
     ],
     "role": "Research Fellow",
-    "dates": "Jun 2026 – present",
+    "dates": "Jun – Nov 2026",
     "mentor": "Rachel Freedman",
     "mentorUrl": "https://rachelfreedman.github.io/",
     "affiliation": "UC Berkeley CHAI",
     "affiliationUrl": "https://humancompatible.ai/",
-    "selectivity": "50 fellows from 800+ applicants (under 6.25% acceptance)",
-    "description": "Reward model interpretability, with collaborators at Columbia, CMU, Stanford, UC Berkeley, AIMS, and Intel."
+    "selectivity": "1 of 50 fellows from 800+ applicants",
+    "description": "Reward model interpretability. Reproduced Meta’s LoRe and helped fix a data shortcut that had inflated its accuracy from 59% to 93%; developed Reward Basis Decomposition (RBD), finding that most personalization gains come from shared preferences. Co-first author of a NeurIPS 2026 InterpScience workshop oral (1 of 4 from 267 submissions)."
   },
   {
     "name": "MIT AI Alignment",
@@ -73,6 +73,6 @@
     "affiliation": "E-JUST",
     "affiliationUrl": "https://ejust.edu.eg/",
     "selectivity": null,
-    "description": "Machine learning for EEG signal analysis and epilepsy classification."
+    "description": "Deep learning for EEG-based seizure detection (Knowledge-Based Systems), and sycophancy in medical vision-language models, leading to a co-first-authored NeurIPS 2026 workshop paper."
   }
 ]

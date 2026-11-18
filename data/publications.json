@@ -3,7 +3,13 @@
     "id": "reward-basis-decomposition",
     "category": "AI Safety and Interpretability",
     "title": "Reward Basis Decomposition for Interpreting Preference Heterogeneity",
-    "authors": ["Eldagla, M. I.", "Onubogu, I.", "Rane, P.", "Sharma, H.", "Freedman, R."],
+    "authors": [
+      "Eldagla, M. I.",
+      "Onubogu, I.",
+      "Rane, P.",
+      "Sharma, H.",
+      "Freedman, R."
+    ],
     "meIndex": 0,
     "venue": "NeurIPS Workshop 2026",
     "venueDetail": "Interpretability as Science: Towards Rigorous Evaluation of Mechanistic Interpretability",
@@ -13,13 +19,23 @@
     "metrics": null,
     "links": {},
     "thumbnail": "assets/thumbs/rbd.jpg",
-    "summary": "Reward Basis Decomposition (RBD) separates shared population preferences from per-user directions, revealing whether reward models encode meaningful individual-level preference structure."
+    "summary": "Reward Basis Decomposition (RBD) separates shared population preferences from per-user directions, revealing whether reward models encode meaningful individual-level preference structure.",
+    "equalContribution": [
+      0,
+      1,
+      2
+    ],
+    "highlight": "Oral presentation (1 of 4 orals from 267 submissions, ≈1.5%)"
   },
   {
     "id": "sycophancy-uncertainty",
     "category": "AI Safety and Interpretability",
     "title": "Uncertainty, Not Concealment: A Mechanistic Reappraisal of Sycophancy in Vision-Language Models",
-    "authors": ["Eldagla, M. I.", "ElShafei, Z. H.", "Anter, A. M."],
+    "authors": [
+      "Eldagla, M. I.",
+      "ElShafei, Z. H.",
+      "Anter, A. M."
+    ],
     "meIndex": 0,
     "venue": "NeurIPS Workshop 2026",
     "venueDetail": "Medical Reasoning with Vision Language Foundation Models (Med-Reasoner)",
@@ -27,15 +43,27 @@
     "year": 2026,
     "status": "accepted",
     "metrics": null,
-    "links": {},
+    "links": {
+      "arxiv": "https://arxiv.org/abs/2611.10297"
+    },
     "thumbnail": "assets/thumbs/sycophancy-mask.jpg",
-    "summary": "Uses probing, activation steering, and forced-choice diagnostics to show that on cross-modal conflicts, VLMs register uncertainty about the visual evidence rather than concealing a conflict they have detected."
+    "summary": "Uses probing, activation steering, and forced-choice diagnostics to show that on cross-modal conflicts, VLMs register uncertainty about the visual evidence rather than concealing a conflict they have detected.",
+    "equalContribution": [
+      0,
+      1
+    ]
   },
   {
     "id": "specification-drift",
     "category": "Evaluation",
     "title": "Specification Drift in Multilingual, Multi-Turn LLM Interactions",
-    "authors": ["Eldagla, M. I.", "Lia, N. J.", "Osman, A.", "Mayeesha, T. T." ],
+    "authors": [
+      "Eldagla, M. I.",
+      "Lia, N. J.",
+      "Osman, A.",
+      "Mayeesha, T. T.",
+      "Morol, M. K."
+    ],
     "meIndex": 0,
     "venue": null,
     "venueDetail": null,
@@ -44,13 +72,21 @@
     "metrics": null,
     "links": {},
     "thumbnail": "assets/thumbs/specDrift.jpg",
-    "summary": "Audits whether models follow their own published specifications across multi-turn, cross-cultural conversations."
+    "summary": "Audits whether models follow their own published specifications across multi-turn, cross-cultural conversations.",
+    "equalContribution": [
+      0,
+      1
+    ]
   },
   {
     "id": "curious-agent",
     "category": "Curiosity-Driven Exploration",
     "title": "The Curious Agent: Can Intrinsic Curiosity Guide LLM Exploration?",
-    "authors": ["Eldagla, M. I.", "Hammad, A.", "Amayuelas, A."],
+    "authors": [
+      "Eldagla, M. I.",
+      "Hammad, A.",
+      "Amayuelas, A."
+    ],
     "meIndex": 0,
     "venue": null,
     "venueDetail": null,
@@ -65,13 +101,22 @@
     "id": "blockchain-eeg-fusion",
     "category": "Medical AI",
     "title": "Blockchain-Integrated Multi-Modal LSTM-CNN Fusion for High-Precision Epileptic Seizure Detection from EEG Signals",
-    "authors": ["Mokhiamar, M. O.", "Mahmoud, A.", "Eldagla, M. I.", "Aribi, Y.", "Anter, A. M."],
+    "authors": [
+      "Mokhiamar, M. O.",
+      "Mahmoud, A.",
+      "Eldagla, M. I.",
+      "Aribi, Y.",
+      "Anter, A. M."
+    ],
     "meIndex": 2,
     "venue": "Knowledge-Based Systems",
     "venueDetail": "323, 113703",
     "year": 2025,
     "status": "published",
-    "metrics": { "quartile": "Q1", "impactFactor": "8.8" },
+    "metrics": {
+      "quartile": "Q1",
+      "impactFactor": "8.8"
+    },
     "links": {
       "doi": "https://doi.org/10.1016/j.knosys.2025.113703",
       "bibtex": "assets/bib/blockchain-eeg-fusion.bib"
@@ -83,7 +128,13 @@
     "id": "eeg-spectrogram-augmentation",
     "category": "Medical AI",
     "title": "EEG Spectrogram Augmentation Using Transformer and Quantum-Inspired Generative Models for Epilepsy Classification",
-    "authors": ["Elshamy, A. A.", "Metwaly, H. A.", "Eldagla, M. I.", "AlKayem, Z.", "Zaky, A. B."],
+    "authors": [
+      "Elshamy, A. A.",
+      "Metwaly, H. A.",
+      "Eldagla, M. I.",
+      "AlKayem, Z.",
+      "Zaky, A. B."
+    ],
     "meIndex": 2,
     "venue": "IEEE Japan-Africa Conference on Electronics, Communications and Computations (JAC-ECC)",
     "venueDetail": null,

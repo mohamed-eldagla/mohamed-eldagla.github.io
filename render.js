@@ -74,10 +74,11 @@
   var LINK_ORDER = ['paper', 'doi', 'arxiv', 'code', 'slides', 'bibtex'];
 
   /* Bolding is driven by meIndex, never by matching the name as a string. */
-  function authorList(authors, meIndex) {
+  function authorList(authors, meIndex, equal) {
     var parts = [];
     authors.forEach(function (name, i) {
       parts.push(i === meIndex ? h('strong', null, name) : name);
+      if (equal && equal.indexOf(i) !== -1) parts.push(h('sup', null, '*'));
       if (i < authors.length - 1) parts.push(', ');
     });
     return parts;
@@ -149,8 +150,12 @@
 
     var body = h('div', { class: 'pub-body' },
       h('h3', { class: 'pub-title' }, title),
-      h('p', { class: 'pub-authors' }, authorList(p.authors, p.meIndex)),
+      h('p', { class: 'pub-authors' },
+        authorList(p.authors, p.meIndex, p.equalContribution),
+        p.equalContribution && p.equalContribution.length
+          ? h('span', { class: 'equal-note' }, ' (*equal contribution)') : null),
       h('p', { class: 'pub-meta' }, meta),
+      p.highlight ? h('p', { class: 'pub-highlight' }, h('strong', null, p.highlight)) : null,
       p.summary ? h('p', { class: 'pub-summary' }, p.summary) : null
     );
 
@@ -388,6 +393,13 @@
     );
   }
 
+  function talk(t) {
+    return h('li', { class: 'entry' },
+      entryHead(t.title, t.date),
+      h('p', { class: 'entry-desc' }, t.venueUrl ? externalLink(t.venueUrl, t.venue) : t.venue)
+    );
+  }
+
   /* ---------- wiring ---------- */
 
   var SECTIONS = [
@@ -396,7 +408,9 @@
     { file: 'teaching',     target: 'teaching-list',   render: course },
     { file: 'experience',   target: 'experience-list', render: role },
     { file: 'education',    target: 'education-list',  render: role },
-    { file: 'honors',       target: 'honors-list',     render: honor }
+    { file: 'honors',       target: 'honors-list',     render: honor },
+    { file: 'talks',        target: 'talks-list',      render: talk },
+    { file: 'service',      target: 'service-list',    render: role }
   ];
 
   function fail(mount, name) {
