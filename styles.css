@@ -608,31 +608,6 @@ h2 {
 
 .muted { color: var(--muted); }
 
-/* ---------- teaching groups ---------- */
-
-.teach-group + .teach-group { margin-block-start: 2.25rem; }
-.teach-group-head { margin-block-end: 1rem; }
-.teach-group-h { font-size: 1.2rem; margin: 0; }
-.teach-group-h a { color: inherit; text-decoration: none; }
-.teach-group-h a:hover,
-.teach-group-h a:focus-visible {
-  text-decoration: underline;
-  text-decoration-color: var(--rule-strong);
-}
-.teach-group-h .ext,
-.entry-body .entry-title .ext {
-  font-size: 0.7em;
-  margin-inline-start: 0.2em;
-  color: var(--muted);
-  vertical-align: 0.15em;
-}
-.entry-body .entry-title a { color: inherit; text-decoration: none; }
-.entry-body .entry-title a:hover,
-.entry-body .entry-title a:focus-visible {
-  text-decoration: underline;
-  text-decoration-color: var(--rule-strong);
-}
-
 .inline-links { font-size: 0.88rem; }
 .inline-links a { color: var(--link); text-decoration: none; }
 .inline-links a:hover,

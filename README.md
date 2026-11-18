@@ -10,7 +10,7 @@ build step — clone it in five years and it still runs.
 | `/` | `index.html` | Name, photo, one-paragraph bio, contact links. One screen, all hardcoded |
 | `/publications/` | `publications/index.html` | Papers grouped by category, rendered from JSON |
 | `/talks/` | `talks/index.html` | Talks, grouped by year, rendered from JSON |
-| `/teaching/` | `teaching/index.html` | Courses taught, grouped by institution, rendered from JSON |
+| `/teaching/` | `teaching/index.html` | Courses taught, one entry per course with an image, rendered from JSON |
 | `/awards/` | `awards/index.html` | Honors and awards, grouped by year, rendered from JSON |
 | `/cv/` | `cv/index.html` | Research experience, industry experience, education, academic service, plus the PDF |
 | `/blog/` | `blog/index.html` | Posts; two placeholder titles so far |
@@ -48,7 +48,7 @@ All list content lives in `data/*.json`. Adding a paper means adding one object 
 | `data/publications.json` | Publications (`/publications/`) |
 | `data/research.json` | Research Experience — fellowships, internships, lab roles (`/cv/`) |
 | `data/talks.json` | Talks (`/talks/`) |
-| `data/teaching.json` | Teaching — groups of courses, one group per institution (`/teaching/`) |
+| `data/teaching.json` | Teaching — one object per course (`/teaching/`) |
 | `data/experience.json` | Experience (`/cv/`) |
 | `data/education.json` | Education (`/cv/`) |
 | `data/service.json` | Academic Service (`/cv/`) |
@@ -81,33 +81,27 @@ layout — but if you change the data much, re-measure and update them.
 
 ### Teaching fields
 
-Courses are grouped under the institution that employed the teaching, so a role shared by several
-courses (four GIU courses as one TA) is stated once in the group heading rather than on every row.
+One object per course taught, not per employer — four courses at the same university are four
+entries, which is what makes the page read as a teaching record rather than a job history.
 
 ```json
 {
-  "heading": "German International University in Cairo",
-  "url": "https://… (optional; links the heading)",
-  "role": "Teaching Assistant, Faculty of Informatics (optional)",
-  "dates": "Winter 2025 – present (optional)",
-  "courses": [
-    {
-      "course": "Big Data & NoSQL Databases",
-      "term": "Spring 2026",
-      "students": 80,
-      "role": "Only for courses outside a shared-role group",
-      "thumbnail": "assets/thumbs/… or null",
-      "links": [{ "label": "Course Website", "url": "https://…" }],
-      "description": "One or two lines on what was actually taught."
-    }
-  ]
+  "course": "Big Data & NoSQL Databases",
+  "term": "Spring 2026",
+  "role": "Teaching Assistant",
+  "org": "German International University in Cairo",
+  "orgUrl": "https://… or null",
+  "thumbnail": "assets/thumbs/… or null",
+  "links": [{ "label": "Course Website", "url": "https://…" }],
+  "description": "One sentence on what was actually taught."
 }
 ```
 
-In a course, the first entry in `links` becomes the title link; any further links trail the
-description. Elsewhere on the site, links follow the same rule.
+On the Teaching page, `links` render on their own row beneath the role line, each with a visible
+label. `orgUrl` may be `null`, which renders the organisation as plain text — used for the
+repeated university name, where four identical links in a row were noise rather than navigation.
 
-`links` is an optional list of `{label, url}` pairs, used the same way on every page: the
+Elsewhere — CV, Awards, Talks — `links` is an optional list of `{label, url}` pairs where the
 **first** link becomes the entry's title link (marked with a small ↗), and any further links trail
 the last line of the entry, separated by `·`. Nothing renders as a row of bare links between the
 title and the text. Omit the key entirely when there is nothing to link.
@@ -126,8 +120,8 @@ drop files into `assets/thumbs/`. The 160px column appears only once at least on
 has an image, so the page reads correctly while they are still being added, and an entry without
 one leaves the column empty rather than showing a placeholder graphic.
 
-Groups and the courses inside them render in file order: currently GIU first, then
-"Other teaching", each newest first.
+Entries render in file order. They are currently reverse-chronological with the university
+courses grouped ahead of the mentoring roles, which reads better than strict date order.
 
 ### Publication fields
 

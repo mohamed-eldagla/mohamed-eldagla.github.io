@@ -1,79 +1,81 @@
 [
   {
-    "heading": "German International University in Cairo",
-    "url": "https://giu-uni.de/",
-    "role": "Teaching Assistant, Faculty of Informatics",
-    "dates": "Winter 2025 – present",
-    "courses": [
-      {
-        "course": "Data Engineering and Visualizations",
-        "term": "Winter 2026",
-        "students": 50,
-        "description": "Data exploration, preprocessing, orchestration, integration, and visualization; led project discussions and designed course materials.",
-        "thumbnail": "assets/thumbs/data-eng.jpg"
-      },
-      {
-        "course": "Big Data & NoSQL Databases",
-        "term": "Spring 2026",
-        "students": 80,
-        "description": "Lectures and labs on MongoDB, Cassandra, Spark ML, Kafka, and Hadoop; led project discussions.",
-        "thumbnail": "assets/thumbs/big-data.jpg"
-      },
-      {
-        "course": "Programming I for Business Informatics",
-        "term": "Spring 2026",
-        "students": 120,
-        "description": "Python fundamentals: variables, loops, and functions; wrote exam and quiz questions.",
-        "thumbnail": "assets/thumbs/python.png"
-      },
-      {
-        "course": "Databases",
-        "term": "Winter 2025",
-        "students": 154,
-        "description": "SQL, relational algebra and calculus, and database design and normalization, taught six sessions a week.",
-        "thumbnail": "assets/thumbs/db.png"
-      }
-    ]
+    "course": "Data Engineering and Visualizations",
+    "term": "Winter 2026",
+    "role": "Teaching Assistant",
+    "org": "German International University in Cairo",
+    "orgUrl": null,
+    "thumbnail": "assets/thumbs/data-eng.jpg",
+    "description": "Lecturing 50 students on Data Exploration, Data Preprocessing, Data Orchestration, Data Integration and Visualizations; holding office hours; grading exams; leading project discussions; designing course materials."
   },
   {
-    "heading": "Other teaching",
-    "courses": [
+    "course": "Big Data & NoSQL Databases",
+    "term": "Spring 2026",
+    "role": "Teaching Assistant",
+    "org": "German International University in Cairo",
+    "orgUrl": null,
+    "thumbnail": "assets/thumbs/big-data.jpg",
+    "description": "Led lectures and labs for 80 students on MongoDB, CassandraDB, SparkML, Kafka, and Hadoop; grading exams; led project discussions, and held office hours."
+  },
+  {
+    "course": "Programming I for Business Informatics",
+    "term": "Spring 2026",
+    "role": "Teaching Assistant",
+    "org": "German International University in Cairo",
+    "orgUrl": null,
+    "thumbnail": "assets/thumbs/python.png",
+    "description": "Taught 120 students on Python Fundamentals including variables, loops, and functions; creating exam and quiz questions; grading exams."
+  },
+  {
+    "course": "Databases",
+    "term": "Winter 2025",
+    "role": "Teaching Assistant",
+    "org": "German International University in Cairo",
+    "orgUrl": null,
+    "thumbnail": "assets/thumbs/db.png",
+    "description": "Lectured 154 students six times a week on SQL, Relational Algebra, Relational Calculus, and Database Design and Normalization; grading exams."
+  },
+  {
+    "course": "Code in Place (CS106A)",
+    "links": [
       {
-        "course": "Code in Place (CS106A), Stanford",
-        "term": "Apr – Jul 2026",
-        "role": "Volunteer Section Leader Mentor",
-        "links": [
-          {
-            "label": "Course Website",
-            "url": "https://codeinplace.stanford.edu/"
-          },
-          {
-            "label": "Certificate",
-            "url": "https://digitalcredential.stanford.edu/check/6F32DA5BAB79ACDB9E94333A6B8038830C0D14F252E213E9234CECFC4521AD24NW1zVHZqbzhEOXkwZFJzRHppQlo2bDFXRnF4dnc0M3dwMitHZEV1Z2NQUHVDQ0dO"
-          }
-        ],
-        "thumbnail": "assets/thumbs/karel.jpg",
-        "description": "Gave students one-on-one help several times a week in a CS106A-based course offered free to 16,000+ learners."
+        "label": "Course Website",
+        "url": "https://codeinplace.stanford.edu/"
       },
       {
-        "course": "Digital Egypt Cubs Initiative (DECI)",
-        "term": "Jul 2023 – Dec 2024",
-        "role": "Instructor, employed by Udacity",
-        "links": [
-          {
-            "url": "https://deci.gov.eg/"
-          }
-        ],
-        "thumbnail": "assets/thumbs/deci.png",
-        "description": "Taught Python, data structures, and algorithms to 40 students aged 12–17 in weekly four-hour, activity-based lessons."
-      },
-      {
-        "course": "Google Developer Student Clubs (DSC)",
-        "term": "Oct 2021 – May 2023",
-        "role": "Core Team Member & CS50x Instructor, E-JUST chapter",
-        "thumbnail": "assets/thumbs/gdsc.jpg",
-        "description": "Taught C++, data structures, and algorithms to 50+ undergraduates; led CS50x study sessions for 100+ students."
+        "label": "Certificate",
+        "url": "https://digitalcredential.stanford.edu/check/6F32DA5BAB79ACDB9E94333A6B8038830C0D14F252E213E9234CECFC4521AD24NW1zVHZqbzhEOXkwZFJzRHppQlo2bDFXRnF4dnc0M3dwMitHZEV1Z2NQUHVDQ0dO"
       }
-    ]
+    ],
+    "term": "Apr – Jul 2026",
+    "role": "Volunteer Section Leader Mentor",
+    "org": "Stanford University Code In Place",
+    "orgUrl": null,
+    "thumbnail": "assets/thumbs/karel.jpg",
+    "description": "Gave students one-on-one help several times a week in Stanford’s CS106A-based introductory Python course, offered free to 16,000+ learners worldwide."
+  },
+  {
+    "course": "Digital Egypt Cubs Initiative (DECI)",
+    "links": [
+      {
+        "label": "Programme Website",
+        "url": "https://deci.gov.eg/"
+      }
+    ],
+    "term": "Jul 2023 – Dec 2024",
+    "role": "Instructor",
+    "org": "Udacity",
+    "orgUrl": null,
+    "thumbnail": "assets/thumbs/deci.png",
+    "description": "Taught Python, data structures, and algorithms to 40 Egyptian students aged 12–17 through weekly 4-hour sessions. Used gamified activities and age-appropriate explanations to make complex concepts accessible and engaging."
+  },
+  {
+    "course": "Google Developer Student Clubs (DSC)",
+    "term": "Oct 2021 – May 2023",
+    "role": "Core Team Member & CS50x Instructor",
+    "org": "Egypt-Japan University of Science and Technology",
+    "orgUrl": null,
+    "thumbnail": "assets/thumbs/gdsc.jpg",
+    "description": "Delivered lectures on C++, data structures, and algorithms to 50+ undergraduates; instructed CS50x with weekly lectures reaching 100+ students on problem-solving and algorithmic thinking; ran coding sessions and supported students through the course."
   }
 ]
