@@ -537,6 +537,91 @@ h2 {
 
 .selectivity { color: var(--muted); }
 
+/* ---------- dated lists (CV, awards, talks) ----------
+   Date in a narrow left column, entry on the right. Year-grouped lists show
+   the year once per group, with a hairline between groups. */
+
+.dated {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr);
+  column-gap: 1.5rem;
+  margin-block-end: 0.9rem;
+}
+.dated:last-child { margin-block-end: 0; }
+
+.dated.group-start:not(:first-child) {
+  border-block-start: 1px solid var(--rule);
+  padding-block-start: 1rem;
+  margin-block-start: 1.1rem;
+}
+
+/* CV rows carry month ranges, so their column is wider, and every row starts
+   a group of one — separate them with space rather than rules. */
+#research-list .dated, #experience-list .dated,
+#education-list .dated, #service-list .dated {
+  grid-template-columns: 7.5rem minmax(0, 1fr);
+  border: 0;
+  padding: 0;
+  margin-block: 0 1.35rem;
+}
+#research-list .dated:last-child, #experience-list .dated:last-child,
+#education-list .dated:last-child, #service-list .dated:last-child { margin-block-end: 0; }
+
+.date-col {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  padding-block-start: 0.1rem;
+}
+
+.dated .entry-title a {
+  color: inherit;
+  text-decoration: none;
+}
+.dated .entry-title a:hover,
+.dated .entry-title a:focus-visible {
+  text-decoration: underline;
+  text-decoration-color: var(--rule-strong);
+}
+.dated .entry-title .ext,
+.inline-links .ext {
+  font-size: 0.75em;
+  margin-inline-start: 0.2em;
+  color: var(--muted);
+  vertical-align: 0.1em;
+}
+
+.entry-sub {
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin: 0.1rem 0 0.25rem;
+}
+
+.entry-bullets {
+  margin: 0.2rem 0 0;
+  padding-inline-start: 1.1rem;
+  font-size: 0.95rem;
+}
+.entry-bullets li { margin-block-end: 0.15rem; }
+.entry-bullets li::marker { color: var(--muted); }
+
+.muted { color: var(--muted); }
+
+.inline-links { font-size: 0.88rem; }
+.inline-links a { color: var(--link); text-decoration: none; }
+.inline-links a:hover,
+.inline-links a:focus-visible { text-decoration: underline; }
+.inline-links .ext { color: inherit; }
+
+@media (max-width: 640px) {
+  .dated,
+  #research-list .dated, #experience-list .dated,
+  #education-list .dated, #service-list .dated { grid-template-columns: minmax(0, 1fr); }
+  .date-col:empty { display: none; }
+  .date-col { padding: 0 0 0.1rem; }
+}
+
 .load-error {
   font-size: 0.95rem;
   color: var(--muted);

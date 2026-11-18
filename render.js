@@ -324,40 +324,7 @@
     );
   }
 
-  function fellowship(f) {
-    var desc = [f.role];
-    if (f.mentor) {
-      desc.push(' with ');
-      desc.push(f.mentorUrl ? externalLink(f.mentorUrl, f.mentor) : f.mentor);
-      if (f.affiliation) {
-        desc.push(' (');
-        desc.push(f.affiliationUrl ? externalLink(f.affiliationUrl, f.affiliation) : f.affiliation);
-        desc.push(')');
-      }
-    }
-    desc.push('. ');
-    if (f.description) desc.push(f.description + ' ');
-    if (f.selectivity) desc.push(h('span', { class: 'selectivity' }, f.selectivity + '.'));
 
-    return h('li', { class: 'entry' },
-      entryHead(f.name, f.dates),
-      entryLinks(f.links, f.name),
-      h('p', { class: 'entry-desc' }, desc)
-    );
-  }
-
-  function role(r) {
-    var title = [r.role, ', ', r.org];
-    var desc = [];
-    if (r.description) desc.push(r.description + ' ');
-    if (r.selectivity) desc.push(h('span', { class: 'selectivity' }, r.selectivity + '.'));
-
-    return h('li', { class: 'entry' },
-      entryHead(title, r.dates),
-      entryLinks(r.links, r.org),
-      desc.length ? h('p', { class: 'entry-desc' }, desc) : null
-    );
-  }
 
   /* A taught course: title and term on the head line, then one muted line
      giving role and institution, then the description. Same shape as a
@@ -385,35 +352,113 @@
     );
   }
 
-  function honor(a) {
-    return h('li', { class: 'entry' },
-      entryHead(a.org ? [a.name, ', ', a.org] : a.name, a.year ? String(a.year) : null),
-      entryLinks(a.links, a.name),
-      a.description ? h('p', { class: 'entry-desc' }, a.description) : null
+
+
+  /* ---------- dated lists (CV, awards, talks) ----------
+     A narrow date column on the left and the entry on the right. Links are
+     folded into the entry: the first one becomes the title link, any others
+     trail the last line, so no entry is split by a row of bare links. */
+
+  function arrow() {
+    return h('span', { class: 'ext', 'aria-hidden': 'true' }, '\u2197');
+  }
+
+  function linkedTitle(text, links) {
+    if (!links || !links.length) return text;
+    return h('a', { href: resolve(links[0].url), rel: 'noopener' }, text, arrow());
+  }
+
+  function inlineLinks(links, context) {
+    if (!links || !links.length) return null;
+    return h('span', { class: 'inline-links' }, links.map(function (l) {
+      var a = h('a', { href: resolve(l.url), rel: 'noopener' }, l.label || domainOf(l.url));
+      if (context) a.appendChild(h('span', { class: 'visually-hidden' }, ' \u2014 ' + context));
+      a.appendChild(arrow());
+      return [sep(), a];
+    }));
+  }
+
+  /* `label` is shown only on the first entry of a run with the same value, so
+     a year reads once as a group heading rather than repeating down the page. */
+  function dated(label, startsGroup, body) {
+    return h('li', { class: 'dated' + (startsGroup ? ' group-start' : '') },
+      h('div', { class: 'date-col' }, startsGroup ? label : null),
+      h('div', { class: 'dated-body' }, body)
     );
   }
 
-  function talk(t) {
-    return h('li', { class: 'entry' },
-      entryHead(t.title, t.date),
-      entryLinks(t.links, t.title),
-      h('p', { class: 'entry-desc' },
-        t.venueUrl ? externalLink(t.venueUrl, t.venue) : t.venue,
-        t.upcoming ? [sep(), h('span', { class: 'status is-preparation' }, 'Upcoming')] : null)
-    );
+  function yearOf(text) {
+    var m = /(\d{4})(?!.*\d{4})/.exec(text || '');
+    return m ? m[1] : '';
+  }
+
+  function honorRow(a, i, all) {
+    var year = a.year ? String(a.year) : '';
+    var prev = i > 0 ? (all[i - 1].year ? String(all[i - 1].year) : '') : null;
+    var line = [];
+    if (a.org) line.push(h('span', { class: 'muted' }, a.org + (a.description ? ' \u2014 ' : '')));
+    if (a.description) line.push(a.description);
+    line.push(inlineLinks((a.links || []).slice(1), a.name));
+    return dated(year, prev !== year, [
+      h('h3', { class: 'entry-title' }, linkedTitle(a.name, a.links)),
+      line.length ? h('p', { class: 'entry-desc' }, line) : null
+    ]);
+  }
+
+  function talkRow(t, i, all) {
+    var year = yearOf(t.date);
+    var prev = i > 0 ? yearOf(all[i - 1].date) : null;
+    var month = (t.date || '').replace(year, '').trim();
+    var line = [t.venueUrl ? externalLink(t.venueUrl, t.venue) : t.venue];
+    if (month) line.push(sep(), h('span', { class: 'muted' }, month));
+    if (t.upcoming) line.push(sep(), h('span', { class: 'status is-preparation' }, 'Upcoming'));
+    line.push(inlineLinks(t.links, t.title));
+    return dated(year, prev !== year, [
+      h('h3', { class: 'entry-title' }, t.title),
+      h('p', { class: 'entry-desc' }, line)
+    ]);
+  }
+
+  /* One CV position: organisation as the title, role (and mentor) beneath it
+     in muted type, then short bullets. Every row shows its own dates, since
+     ranges overlap and cannot be grouped. */
+  function cvRow(r) {
+    var org = r.name || r.org;
+    var sub = [r.role];
+    if (r.mentor) {
+      sub.push(' with ');
+      sub.push(r.mentorUrl ? externalLink(r.mentorUrl, r.mentor) : r.mentor);
+      if (r.affiliation) {
+        sub.push(' (');
+        sub.push(r.affiliationUrl ? externalLink(r.affiliationUrl, r.affiliation) : r.affiliation);
+        sub.push(')');
+      }
+    }
+    if (r.selectivity) sub.push(sep(), r.selectivity);
+    sub.push(inlineLinks((r.links || []).slice(1), org));
+
+    var bullets = r.bullets && r.bullets.length
+      ? h('ul', { class: 'entry-bullets' }, r.bullets.map(function (b) { return h('li', null, b); }))
+      : (r.description ? h('p', { class: 'entry-desc' }, r.description) : null);
+
+    return dated(r.dates, true, [
+      h('h3', { class: 'entry-title' }, linkedTitle(org, r.links)),
+      r.role ? h('p', { class: 'entry-sub' }, sub) : null,
+      bullets
+    ]);
   }
 
   /* ---------- wiring ---------- */
 
   var SECTIONS = [
     { file: 'publications', target: 'pub-list',        group:  publicationGroups },
-    { file: 'research',     target: 'research-list',   render: fellowship },
+    { file: 'research',     target: 'research-list',   render: cvRow },
     { file: 'teaching',     target: 'teaching-list',   render: course },
-    { file: 'experience',   target: 'experience-list', render: role },
-    { file: 'education',    target: 'education-list',  render: role },
-    { file: 'honors',       target: 'honors-list',     render: honor },
-    { file: 'talks',        target: 'talks-list',      render: talk },
-    { file: 'service',      target: 'service-list',    render: role }
+    { file: 'experience',   target: 'experience-list', render: cvRow },
+    { file: 'education',    target: 'education-list',  render: cvRow },
+    { file: 'honors',       target: 'honors-list',     render: honorRow },
+    { file: 'talks',        target: 'talks-list',      render: talkRow },
+    { file: 'service',      target: 'service-list',    render: cvRow }
   ];
 
   function fail(mount, name) {

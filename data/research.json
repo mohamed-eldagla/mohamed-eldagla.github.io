@@ -13,7 +13,10 @@
     "affiliation": "Stanford HAI",
     "affiliationUrl": "https://hai.stanford.edu/",
     "selectivity": "1 of 67 from 700+ applicants",
-    "description": "Curiosity-driven learning in LLM agents (master’s thesis), testing surprisal, learning progress, and information gain as curiosity signals across inference, SFT, and GRPO. Also auditing multilingual specification-following with Tasmiah Tahsin Mayeesha (UNT) and Md Kishor Morol (Anthropic)."
+    "bullets": [
+      "Master’s thesis on curiosity-driven LLM exploration across inference, SFT, and GRPO, testing surprisal, learning progress, and information gain as curiosity signals.",
+      "Auditing multilingual specification-following with Tasmiah Tahsin Mayeesha (UNT) and Md Kishor Morol (Anthropic)."
+    ]
   },
   {
     "name": "PRISM AI Safety Research Fellowship",
@@ -29,7 +32,11 @@
     "affiliation": "UC Berkeley CHAI",
     "affiliationUrl": "https://humancompatible.ai/",
     "selectivity": "1 of 50 fellows from 800+ applicants",
-    "description": "Reward model interpretability. Reproduced Meta’s LoRe and helped fix a data shortcut that had inflated its accuracy from 59% to 93%; developed Reward Basis Decomposition (RBD), finding that most personalization gains come from shared preferences. Co-first author of a NeurIPS 2026 InterpScience workshop oral (1 of 4 from 267 submissions)."
+    "bullets": [
+      "Reproduced Meta’s LoRe and helped fix a data shortcut that had inflated its accuracy from 59% to 93%.",
+      "Developed Reward Basis Decomposition (RBD), finding that most personalization gains come from shared preferences.",
+      "Co-first author of a NeurIPS 2026 InterpScience workshop oral (1 of 4 from 267 submissions)."
+    ]
   },
   {
     "name": "MIT AI Alignment",
@@ -40,13 +47,30 @@
       }
     ],
     "role": "AI Safety Fellow",
-    "dates": "June 2026 – August 2026",
+    "dates": "Jun – Aug 2026",
     "mentor": null,
     "mentorUrl": null,
     "affiliation": null,
     "affiliationUrl": null,
     "selectivity": null,
-    "description": "Studied alignment, scalable oversight, and mechanistic interpretability. Discussed reward misspecification, alignment faking, and AI threat models in weekly reading groups."
+    "bullets": [
+      "Studied alignment, scalable oversight, and mechanistic interpretability.",
+      "Weekly reading groups on reward misspecification, alignment faking, and AI threat models."
+    ]
+  },
+  {
+    "name": "Medical Informatics & Neuro Dynamics (MIND) School",
+    "role": "Research Assistant",
+    "dates": "May 2023 – Jul 2026",
+    "mentor": "Ahmed Anter",
+    "mentorUrl": "https://scholar.google.com/citations?user=Is1NwF4AAAAJ&hl=en",
+    "affiliation": "E-JUST",
+    "affiliationUrl": "https://ejust.edu.eg/",
+    "selectivity": null,
+    "bullets": [
+      "Developed deep learning models for EEG-based seizure detection, co-authoring a paper in Knowledge-Based Systems.",
+      "Studied sycophancy in medical vision-language models, leading to a co-first-authored NeurIPS 2026 workshop paper."
+    ]
   },
   {
     "name": "Université Paris-Est Créteil",
@@ -62,17 +86,9 @@
     "affiliation": null,
     "affiliationUrl": null,
     "selectivity": "1 of 30 from 1,300+ applicants",
-    "description": "LLM-based event discovery over 50K+ records, with ensemble knowledge distillation."
-  },
-  {
-    "name": "Medical Informatics & Neuro Dynamics (MIND) School",
-    "role": "Research Assistant",
-    "dates": "May 2023 – Jul 2026",
-    "mentor": "Ahmed Anter",
-    "mentorUrl": "https://scholar.google.com/citations?user=Is1NwF4AAAAJ&hl=en",
-    "affiliation": "E-JUST",
-    "affiliationUrl": "https://ejust.edu.eg/",
-    "selectivity": null,
-    "description": "Deep learning for EEG-based seizure detection (Knowledge-Based Systems), and sycophancy in medical vision-language models, leading to a co-first-authored NeurIPS 2026 workshop paper."
+    "bullets": [
+      "Built an LLM-based event discovery system with TinyLlama 1.1B over 50K+ records from 100+ sources.",
+      "Applied ensemble knowledge distillation using Jais 13B, Gemma 3, and TunBERT."
+    ]
   }
 ]

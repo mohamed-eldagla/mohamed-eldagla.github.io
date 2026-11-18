@@ -10,19 +10,24 @@
         "url": "https://giu-uni.de/"
       }
     ],
-    "description": "Advised by Caroline Sabty; thesis research mentored by Alfonso Amayuelas (UC Santa Barbara & Stanford HAI). German GPA 0.9 — on the German scale, where 1.0 is excellent and 4.0 is the pass threshold, so it corresponds to roughly 4.0/4.0 on the US scale."
+    "bullets": [
+      "Advised by Caroline Sabty; thesis research mentored by Alfonso Amayuelas (UC Santa Barbara & Stanford HAI).",
+      "German GPA 0.9 (1.0 is excellent, 4.0 is the pass threshold), roughly 4.0/4.0 on the US scale."
+    ]
   },
   {
     "role": "BSc Computer Science (AI and Data Science)",
-    "org": "E-JUST",
+    "org": "Egypt-Japan University of Science and Technology (E-JUST)",
     "orgUrl": null,
-    "dates": "2021 – 2025",
+    "dates": "Sep 2021 – Jul 2025",
     "selectivity": null,
     "links": [
       {
         "url": "https://ejust.edu.eg/"
       }
     ],
-    "description": "Egypt-Japan University of Science and Technology. GPA 3.59/4.0."
+    "bullets": [
+      "GPA 3.59/4.0."
+    ]
   }
 ]
