@@ -606,6 +606,14 @@ h2 {
 .entry-bullets li { margin-block-end: 0.15rem; }
 .entry-bullets li::marker { color: var(--muted); }
 
+.entry-project { margin-block-start: 0.6rem; }
+.entry-project-title {
+  margin: 0;
+  font-size: 0.95rem;
+  font-style: italic;
+  font-weight: 500;
+}
+
 .muted { color: var(--muted); }
 
 .inline-links { font-size: 0.88rem; }

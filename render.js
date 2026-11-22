@@ -443,29 +443,51 @@
   /* One CV position: organisation as the title, role (and mentor) beneath it
      in muted type, then short bullets. Every row shows its own dates, since
      ranges overlap and cannot be grouped. */
+  function mentorParts(r) {
+    var parts = [r.mentorUrl ? externalLink(r.mentorUrl, r.mentor) : r.mentor];
+    if (r.affiliation) {
+      parts.push(' (');
+      parts.push(r.affiliationUrl ? externalLink(r.affiliationUrl, r.affiliation) : r.affiliation);
+      parts.push(')');
+    }
+    return parts;
+  }
+
+  function bulletList(items) {
+    return h('ul', { class: 'entry-bullets' }, items.map(function (b) { return h('li', null, b); }));
+  }
+
+  /* A distinct line of work inside one position: its own heading, the people
+     involved, and its own bullets. */
+  function projectBlock(p) {
+    var people = p.mentor ? [(p.mentorLabel || 'with') + ' '].concat(mentorParts(p)) : null;
+    return h('div', { class: 'entry-project' },
+      h('h4', { class: 'entry-project-title' }, p.title),
+      people ? h('p', { class: 'entry-sub' }, people) : null,
+      p.bullets && p.bullets.length ? bulletList(p.bullets) : null
+    );
+  }
+
   function cvRow(r) {
     var org = r.name || r.org;
     var sub = [r.role];
     if (r.mentor) {
       sub.push(' with ');
-      sub.push(r.mentorUrl ? externalLink(r.mentorUrl, r.mentor) : r.mentor);
-      if (r.affiliation) {
-        sub.push(' (');
-        sub.push(r.affiliationUrl ? externalLink(r.affiliationUrl, r.affiliation) : r.affiliation);
-        sub.push(')');
-      }
+      sub = sub.concat(mentorParts(r));
     }
     if (r.selectivity) sub.push(sep(), r.selectivity);
     sub.push(inlineLinks((r.links || []).slice(1), org));
 
-    var bullets = r.bullets && r.bullets.length
-      ? h('ul', { class: 'entry-bullets' }, r.bullets.map(function (b) { return h('li', null, b); }))
-      : (r.description ? h('p', { class: 'entry-desc' }, r.description) : null);
+    var details = r.projects && r.projects.length
+      ? h('div', { class: 'entry-projects' }, r.projects.map(projectBlock))
+      : r.bullets && r.bullets.length
+        ? bulletList(r.bullets)
+        : (r.description ? h('p', { class: 'entry-desc' }, r.description) : null);
 
     return dated(r.dates, true, [
       h('h3', { class: 'entry-title' }, linkedTitle(org, r.links)),
       r.role ? h('p', { class: 'entry-sub' }, sub) : null,
-      bullets
+      details
     ]);
   }
 

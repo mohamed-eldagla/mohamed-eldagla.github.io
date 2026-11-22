@@ -8,17 +8,31 @@
     ],
     "role": "Pre-doctoral Fellow",
     "dates": "Apr 2026 – present",
-    "mentor": "Alfonso Amayuelas",
-    "mentorUrl": "https://www.amayuelas.me/",
-    "affiliation": "Stanford HAI",
-    "affiliationUrl": "https://hai.stanford.edu/",
     "selectivity": "1 of 67 from 700+ applicants",
-    "bullets": [
-      "Master’s thesis on curiosity-driven LLM exploration across inference, SFT, and GRPO, adapting Schmidhuber’s curiosity signals (surprisal, learning progress, information gain) to modern LLM agents.",
-      "Built CuriosityLab, an environment for clean signal ablations; adding learning progress raises exploration 1.5× (pilot).",
-      "SpecDrift, with Tasmiah Tahsin Mayeesha (UNT) and Md Kishor Morol (Anthropic): auditing whether Anthropic and OpenAI models follow their own published constitutions and specs.",
-      "Red-teaming with Petri using persona-based, multi-turn attacks across Bangla, Egyptian, and Sudanese contexts.",
-      "Designed tiered risk taxonomies for Egyptian dialects, including region-specific risks in Upper Egypt."
+    "projects": [
+      {
+        "title": "Curiosity-Driven Learning in LLM Agents (master’s thesis)",
+        "mentorLabel": "mentored by",
+        "mentor": "Alfonso Amayuelas",
+        "mentorUrl": "https://www.amayuelas.me/",
+        "affiliation": "Stanford HAI",
+        "affiliationUrl": "https://hai.stanford.edu/",
+        "bullets": [
+          "Studying curiosity-driven LLM exploration across inference, SFT, and GRPO.",
+          "Adapting Schmidhuber’s curiosity signals (surprisal, learning progress, information gain) to modern LLM agents.",
+          "Built CuriosityLab, an environment for clean signal ablations; adding learning progress raises exploration 1.5× (pilot)."
+        ]
+      },
+      {
+        "title": "SpecDrift: Multilingual AI Safety",
+        "mentorLabel": "with",
+        "mentor": "Tasmiah Tahsin Mayeesha (UNT) and Md Kishor Morol (Anthropic)",
+        "bullets": [
+          "Auditing whether Anthropic and OpenAI models follow their own published constitutions and specs.",
+          "Red-teaming with Petri using persona-based, multi-turn attacks across Bangla, Egyptian, and Sudanese contexts.",
+          "Designed tiered risk taxonomies for Egyptian dialects, including region-specific risks in Upper Egypt."
+        ]
+      }
     ]
   },
   {

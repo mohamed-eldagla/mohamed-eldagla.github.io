@@ -65,8 +65,10 @@ The CV, Awards, and Talks pages use one layout: dates in a narrow left column, t
 right. On Awards and Talks the year shows once per group, with a hairline between years, so the
 order of the JSON matters — keep them newest first. On the CV every row shows its own date range,
 the organisation is the title, the role sits beneath it in muted type, and an optional `bullets`
-array renders as a short list (falling back to `description` when there are no bullets). Below
-640px the date column folds above each entry.
+array renders as a short list (falling back to `description` when there are no bullets). A role
+covering separate lines of work can use `projects` instead of `bullets`: each has a `title`,
+optional `bullets`, and optional `mentor`, `mentorUrl`, `affiliation`, `affiliationUrl`, and
+`mentorLabel` (defaults to "with"). Below 640px the date column folds above each entry.
 
 `render.js` resolves data paths from its own location, so the same file works from any page and
 survives being deployed into a subdirectory.
