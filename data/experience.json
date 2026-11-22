@@ -11,9 +11,8 @@
     "dates": "Jul – Sep 2025",
     "selectivity": null,
     "bullets": [
-      "Built a Prime Minister-sponsored retrieval-augmented chatbot that assesses emerging rumors on the national “Chat Egypt” platform.",
-      "Sole developer during the internship; the system was later extended and deployed.",
-      "Built pipelines for automated verification of news content from trusted governmental and media sources."
+      "As sole developer, built “Chat Egypt,” a Prime Minister-sponsored RAG chatbot for checking circulating rumors.",
+      "Built pipelines that verify news content against trusted government and media sources; system later deployed."
     ]
   },
   {

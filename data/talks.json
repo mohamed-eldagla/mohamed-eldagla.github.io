@@ -4,7 +4,13 @@
     "venue": "Oral presentation, NeurIPS 2026 Workshop: Interpretability as Science",
     "venueUrl": "https://interpscience.github.io/",
     "date": "Dec 2026",
-    "upcoming": true
+    "upcoming": true,
+    "links": [
+      {
+        "label": "NeurIPS",
+        "url": "https://neurips.cc/virtual/2026/loc/sydney/166008"
+      }
+    ]
   },
   {
     "title": "Do People Really Want Different Things? Reward Basis Decomposition Explained",

@@ -14,8 +14,11 @@
     "affiliationUrl": "https://hai.stanford.edu/",
     "selectivity": "1 of 67 from 700+ applicants",
     "bullets": [
-      "Master’s thesis on curiosity-driven LLM exploration across inference, SFT, and GRPO, testing surprisal, learning progress, and information gain as curiosity signals.",
-      "Auditing multilingual specification-following with Tasmiah Tahsin Mayeesha (UNT) and Md Kishor Morol (Anthropic)."
+      "Master’s thesis on curiosity-driven LLM exploration across inference, SFT, and GRPO, adapting Schmidhuber’s curiosity signals (surprisal, learning progress, information gain) to modern LLM agents.",
+      "Built CuriosityLab, an environment for clean signal ablations; adding learning progress raises exploration 1.5× (pilot).",
+      "SpecDrift, with Tasmiah Tahsin Mayeesha (UNT) and Md Kishor Morol (Anthropic): auditing whether Anthropic and OpenAI models follow their own published constitutions and specs.",
+      "Red-teaming with Petri using persona-based, multi-turn attacks across Bangla, Egyptian, and Sudanese contexts.",
+      "Designed tiered risk taxonomies for Egyptian dialects, including region-specific risks in Upper Egypt."
     ]
   },
   {
@@ -34,7 +37,8 @@
     "selectivity": "1 of 50 fellows from 800+ applicants",
     "bullets": [
       "Reproduced Meta’s LoRe and helped fix a data shortcut that had inflated its accuracy from 59% to 93%.",
-      "Developed Reward Basis Decomposition (RBD), finding that most personalization gains come from shared preferences.",
+      "Developed Reward Basis Decomposition (RBD) to separate shared from individual preferences; per-user terms added no accuracy on real data.",
+      "Showed RBD recovers synthetic per-user preferences and beats the base reward model (0.64 → 0.67 accuracy).",
       "Co-first author of a NeurIPS 2026 InterpScience workshop oral (1 of 4 from 267 submissions)."
     ]
   },
@@ -68,7 +72,7 @@
     "affiliationUrl": "https://ejust.edu.eg/",
     "selectivity": null,
     "bullets": [
-      "Developed deep learning models for EEG-based seizure detection, co-authoring a paper in Knowledge-Based Systems.",
+      "Developed an LSTM-CNN model for EEG seizure detection (99.1% test accuracy for 2-class, 90.7% for 5-class), co-authoring a paper in Knowledge-Based Systems.",
       "Studied sycophancy in medical vision-language models, leading to a co-first-authored NeurIPS 2026 workshop paper."
     ]
   },
@@ -79,7 +83,7 @@
         "url": "https://www.u-pec.fr/"
       }
     ],
-    "role": "Data Scientist Intern (NLP)",
+    "role": "Data Science Intern, NLP",
     "dates": "Jun – Aug 2025",
     "mentor": null,
     "mentorUrl": null,
@@ -87,8 +91,8 @@
     "affiliationUrl": null,
     "selectivity": "1 of 30 from 1,300+ applicants",
     "bullets": [
-      "Built an LLM-based event discovery system with TinyLlama 1.1B over 50K+ records from 100+ sources.",
-      "Applied ensemble knowledge distillation using Jais 13B, Gemma 3, and TunBERT."
+      "Built a 105K-record multilingual event dataset (real and synthetic) across English, French, and Tunisian Arabic.",
+      "Prototyped ensemble knowledge distillation from Jais 13B and TunBERT into TinyLlama 1.1B for on-device use."
     ]
   }
 ]
