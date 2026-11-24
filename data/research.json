@@ -50,7 +50,7 @@
     "affiliationUrl": "https://humancompatible.ai/",
     "selectivity": "1 of 50 fellows from 800+ applicants",
     "bullets": [
-      "Reproduced Meta’s LoRe and helped fix a data shortcut that had inflated its accuracy from 59% to 93%.",
+      "Reproduced Meta’s LoRe and helped fix a data shortcut that had inflated its accuracy from 59% to 98%.",
       "Developed Reward Basis Decomposition (RBD) to separate shared from individual preferences; per-user terms added no accuracy on real data.",
       "Showed RBD recovers synthetic per-user preferences and beats the base reward model (0.64 → 0.67 accuracy).",
       "Co-first author of a NeurIPS 2026 InterpScience workshop oral (1 of 4 from 267 submissions)."
