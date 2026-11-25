@@ -90,7 +90,7 @@ which is what makes the page read as a teaching record rather than a job history
 
 ```json
 {
-  "heading": "German International University in Cairo",
+  "heading": "German International University",
   "url": "https://… (optional; links the heading)",
   "role": "Teaching Assistant, Faculty of Informatics (optional)",
   "courses": [ … ]
@@ -104,7 +104,7 @@ A course:
   "course": "Big Data & NoSQL Databases",
   "term": "Spring 2026",
   "role": "Teaching Assistant",
-  "org": "German International University in Cairo",
+  "org": "German International University",
   "orgUrl": "https://… or null",
   "thumbnail": "assets/thumbs/… or null",
   "links": [{ "label": "Course Website", "url": "https://…" }],
